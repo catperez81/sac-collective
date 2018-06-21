@@ -6,9 +6,9 @@ const morgan = require("morgan");
 const passport = require("passport");
 const { router: usersRouter } = require("./users");
 const { router: authRouter, localStrategy, jwtStrategy } = require("./auth");
-mongoose.Promise = global.Promise;
 const { PORT, DATABASE_URL } = require("./config");
 
+mongoose.Promise = global.Promise;
 const app = express();
 app.use(morgan("common")); // Logging
 
