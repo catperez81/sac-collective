@@ -1,5 +1,5 @@
 'use strict';
-const {User} = require('./models');
+const {Recommendation} = require('./models');
 const {router} = require('./router');
 
-module.exports = {User, router};
+module.exports = {Recommendation, router};

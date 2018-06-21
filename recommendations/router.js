@@ -6,10 +6,10 @@ const {User} = require('./models');
 const router = express.Router();
 const jsonParser = bodyParser.json();
 
-// return all current Blog posts
+// return all current Blog recommendation
 router.get('/', (req, res) => {
-  BlogPost.find().then(posts => {
-    res.json(posts.map(post => post.serialize()));
+  Recommendation.find().then(recommendations => {
+    res.json(recommendations.map(recommendation => recommendation.serialize()));
   })
   .catch(err => {
     console.error(err);
@@ -19,9 +19,9 @@ router.get('/', (req, res) => {
 
 
 router.get('/:id', (req, res) => {
-  BlogPost
+  Recommendation
   .findById(req.params.id)
-  .then(post => res.json(post.serialize()))
+  .then(recommendation => res.json(recommendation.serialize()))
   .catch(err => {
     console.error(err);
     res.status(500).json({ error: 'something went wrong' });
@@ -40,14 +40,14 @@ router.post('/', jsonParser, (req, res) => {
     }
   }
 
-  BlogPost
+  Recommendation
   .create({
     author: req.body.author,
     title: req.body.title,
     content: req.body.content,
     publishDate: req.body.publishDate
   })
-  .then(blogPost => res.status(201).json(blogPost.serialize()))
+  .then(recommendation => res.status(201).json(recommendation.serialize()))
   .catch(err => {
     console.error(err);
     res.status(500).json({ error: 'Something went wrong'});
@@ -69,17 +69,17 @@ router.put('/:id', jsonParser, (req, res) => {
     }
   });
 
-  BlogPost
+  Recommendation
   .findByIdAndUpdate(req.params.id, { $set: updated }, { new: true })
-  .then(updatedPost => res.status(204).end())
+  .then(updatedRecommendation => res.status(204).end())
   .catch(err => res.status(500).json({ message: 'Something went wrong' }));
 });
 
 
 router.delete('/:id', (req, res) => {
-  BlogPost
+  Recommendation
     .findByIdAndDelete(req.params.id)
-    .then(deletedPost => res.status(204).end())
+    .then(deletedRecommendation => res.status(204).end())
     .catch(err => res.status(500).json({ message: 'Something went wrong' }));
   });
 
