@@ -5,7 +5,9 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const UserSchema = mongoose.Schema({
-  username: {
+  firstName: {type: String, default: ''},
+  lastName: {type: String, default: ''}
+  email: {
     type: String,
     required: true,
     unique: true
@@ -14,15 +16,30 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  firstName: {type: String, default: ''},
-  lastName: {type: String, default: ''}
+  bio: {
+    type: String,
+    required: false
+  },
+  img_url: {
+    type: String,
+    required: false
+  }
+  // recommendations: {
+  //   type: Array
+  // },
+  // follows: {
+  //   type: Array
+  // }
 });
 
 UserSchema.methods.serialize = function() {
   return {
-    username: this.username || '',
     firstName: this.firstName || '',
-    lastName: this.lastName || ''
+    lastName: this.lastName || '',
+    email: this.email || '',
+    password: this.password || '',
+    bio: this.bio || '',
+    img_url: this.img_url || ''
   };
 };
 

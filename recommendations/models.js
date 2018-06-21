@@ -4,28 +4,40 @@ const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
 
-const UserSchema = mongoose.Schema({
-  username: {
+const RecommendationSchema = mongoose.Schema({
+  businessName: {
     type: String,
     required: true,
     unique: true
   },
-  password: {
+  businessType: {
     type: String,
     required: true
   },
-  firstName: { type: String, default: "" },
-  lastName: { type: String, default: "" }
+  recommendation: { 
+    type: String,
+    default: "" 
+  },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: ‘User’ 
+  },
+  score: {
+    type: Number,
+    default: 0
+  }
 });
 
-UserSchema.methods.serialize = function() {
+RecommendationSchema.methods.serialize = function() {
   return {
-    username: this.username || "",
-    firstName: this.firstName || "",
-    lastName: this.lastName || ""
+    businessName: this.businessName || '',
+    businessType: this.businessType || '',
+    recommendation: this.recommendation || '',
+    userId: this.userId || '',
+    score: this.score || 0
   };
 };
 
-const User = mongoose.model("User", UserSchema);
+const Recommendation = mongoose.model("User", RecommendationSchema);
 
-module.exports = { User };
+module.exports = { Recommendation };

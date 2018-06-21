@@ -10,7 +10,7 @@ const jsonParser = bodyParser.json();
 
 // Post to register a new user
 router.post('/', jsonParser, (req, res) => {
-  const requiredFields = ['username', 'password'];
+  const requiredFields = ['email', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
 
   if (missingField) {
@@ -22,7 +22,7 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
-  const stringFields = ['username', 'password', 'firstName', 'lastName'];
+  const stringFields = ['email', 'password', 'firstName', 'lastName'];
   const nonStringField = stringFields.find(
     field => field in req.body && typeof req.body[field] !== 'string'
   );
@@ -36,14 +36,14 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
-  // If the username and password aren't trimmed we give an error.  Users might
+  // If the email and password aren't trimmed we give an error.  Users might
   // expect that these will work without trimming (i.e. they want the password
   // "foobar ", including the space at the end).  We need to reject such values
   // explicitly so the users know what's happening, rather than silently
   // trimming them and expecting the user to understand.
   // We'll silently trim the other fields, because they aren't credentials used
   // to log in, so it's less of a problem.
-  const explicityTrimmedFields = ['username', 'password'];
+  const explicityTrimmedFields = ['email', 'password'];
   const nonTrimmedField = explicityTrimmedFields.find(
     field => req.body[field].trim() !== req.body[field]
   );
@@ -58,7 +58,7 @@ router.post('/', jsonParser, (req, res) => {
   }
 
   const sizedFields = {
-    username: {
+    email: {
       min: 1
     },
     password: {
@@ -92,22 +92,22 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
-  let {username, password, firstName = '', lastName = ''} = req.body;
-  // Username and password come in pre-trimmed, otherwise we throw an error
+  let {email, password, firstName = '', lastName = ''} = req.body;
+  // email and password come in pre-trimmed, otherwise we throw an error
   // before this
   firstName = firstName.trim();
   lastName = lastName.trim();
 
-  return User.find({username})
+  return User.find({email})
     .count()
     .then(count => {
       if (count > 0) {
-        // There is an existing user with the same username
+        // There is an existing user with the same email
         return Promise.reject({
           code: 422,
           reason: 'ValidationError',
-          message: 'Username already taken',
-          location: 'username'
+          message: 'email already taken',
+          location: 'email'
         });
       }
       // If there is no existing user, hash the password
@@ -115,7 +115,7 @@ router.post('/', jsonParser, (req, res) => {
     })
     .then(hash => {
       return User.create({
-        username,
+        email,
         password: hash,
         firstName,
         lastName
@@ -134,14 +134,10 @@ router.post('/', jsonParser, (req, res) => {
     });
 });
 
-// Never expose all your users like below in a prod application
-// we're just doing this so we have a quick way to see
-// if we're creating users. keep in mind, you can also
-// verify this in the Mongo shell.
-router.get('/', (req, res) => {
-  return User.find()
-    .then(users => res.json(users.map(user => user.serialize())))
-    .catch(err => res.status(500).json({message: 'Internal server error'}));
-});
+// router.get('/', (req, res) => {
+//   return User.find()
+//     .then(users => res.json(users.map(user => user.serialize())))
+//     .catch(err => res.status(500).json({message: 'Internal server error'}));
+// });
 
 module.exports = {router};
