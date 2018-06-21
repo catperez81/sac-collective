@@ -1,4 +1,15 @@
-body {
-	background: black;
-	color: white;
+/* Defaults for all elements */\
+* {
+  box-sizing: border-box;
+  line-height: 1.7em;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, main {
+  height: 100%;
+  margin: 0;
+  background: white;
+  color: black;
 }
