@@ -1,1 +1,1 @@
-alert("hi");
+alert("home page");
