@@ -1,3 +1,25 @@
 body {
-  background-color: grey;
+ 	background: #ECECEC;
+ 	text-align: center;
+ 	margin-top: 100px;
+ }
+
+#doc-search-form {
+  background-image: url(images/sac-sky.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 80%;
+  padding-top: 50px;
+}
+
+p {
+	font-size: 18px;
+	font-family: 'Muli', sans-serif;
+}
+
+.cta-row {
+	margin-top: 30px;
+	margin-bottom: 100px;
 }

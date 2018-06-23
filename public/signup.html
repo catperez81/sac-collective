@@ -5,6 +5,7 @@
     <title>The Sacramento Collective</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/signup.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet">
   </head>
   <body>
     <main role = "main">
@@ -16,7 +17,32 @@
         </nav>
       </section>
     </main>
-      <script type="text/javascript" src="/js/main.js"> </script>
-      <script type="text/javascript" src="/js/signup.js"> </script>
+
+    <section role="region">
+      <div class="row">
+        <div class="signup-header">
+          <h1>Sign up for a free account</h1>
+          <p class="app-description">Stay up to date on what’s new in Sacramento!</p>
+        </div>
+        <form id="signup-form">
+            <fieldset>
+              <div class="field">
+                <label>Email address</label><br>
+                <input type="text" name="email" class="email" required>
+              </div>
+              <div class="field">
+                <label>Password</label>
+                <input type="text" name="password" class="password" required>
+              </div>
+              <div class="cta-row">
+                <button class="btn btn-default signup-button" type="submit">Sign up</button>
+              </div>
+            </fieldset>
+        </form>
+      </div>
+    </section>
+
+<!--       <script type="text/javascript" src="/js/main.js"> </script> -->
+<!--       <script type="text/javascript" src="/js/signup.js"> </script> -->
   </body>
 </html>
