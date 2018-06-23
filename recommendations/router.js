@@ -6,7 +6,6 @@ const {User} = require('./models');
 const router = express.Router();
 const jsonParser = bodyParser.json();
 
-// return all current Blog recommendation
 router.get('/', (req, res) => {
   Recommendation.find().then(recommendations => {
     res.json(recommendations.map(recommendation => recommendation.serialize()));
@@ -16,7 +15,6 @@ router.get('/', (req, res) => {
     res.status(500).json({error: 'something went wrong'});
   });
 });
-
 
 router.get('/:id', (req, res) => {
   Recommendation
@@ -28,8 +26,8 @@ router.get('/:id', (req, res) => {
   });
 });
 
-
 router.post('/', jsonParser, (req, res) => {
+  //change to actual fields//
   const requiredFields = ['title','content','author'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
@@ -62,6 +60,7 @@ router.put('/:id', jsonParser, (req, res) => {
   }
 
   const updated = {};
+  //change to actual fields//
   const updateableFields = ['title', 'content', 'author'];
   updateableFields.forEach(field => {
     if (field in req.body) {
@@ -75,13 +74,11 @@ router.put('/:id', jsonParser, (req, res) => {
   .catch(err => res.status(500).json({ message: 'Something went wrong' }));
 });
 
-
 router.delete('/:id', (req, res) => {
   Recommendation
     .findByIdAndDelete(req.params.id)
     .then(deletedRecommendation => res.status(204).end())
     .catch(err => res.status(500).json({ message: 'Something went wrong' }));
   });
-
 
 module.exports = {router};
