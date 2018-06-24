@@ -7,10 +7,16 @@ body {
 p {
 	font-size: 18px;
 	font-family: 'Muli', sans-serif;
+	padding-bottom: 30px;
+	line-height: 1.7em;
 }
 
 h2 {
 	font-family: 'Muli', sans-serif;
+}
+
+.sky-asset {
+	padding-bottom: 50px;
 }
 
 .cta-row {
@@ -21,12 +27,13 @@ h2 {
 .value-props {
 	background: white;
 	text-align: left;
-	padding: 100px 0px 50px 50px;
+	padding: 50px 0px 50px 50px;
 	display: inline-block;
 }
 
 .value-content {
-	width: 30%;
+	width: 25%;
+	margin-right: 5%;
 	text-align: left;
 	float: left;
 	display: inline-block;
