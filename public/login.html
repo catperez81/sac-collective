@@ -2,13 +2,50 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>The Sacramento Collective</title>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet">
   </head>
-  <body>
-    <h1>HI!</hi>
-      <script type="text/javascript" src="/js/main.js"> </script>
-      <script type="text/javascript" src="/js/login.js"> </script>
+  <body id = "signup">
+    <main role = "main">
+
+      <div class="row">
+        <nav role="navigation">
+          <div class="logo-section">
+            <img src="images/sac-collective-logo.png" id="logo" height="24px" border="0" alt="sac-collective logo">
+          </div>
+        </nav>
+      </div>
+
+      <section role="region">
+        <div class="row">
+          <div class="form">
+            <div class="signup-header">
+              <h1>Log into your account</h1>
+              <p class="app-description">Stay up to date on what’s new in Sacramento!</p>
+            </div>
+            <form id="signup-form">
+                <fieldset>
+                  <div class="field">
+                    <label>Email address</label><br>
+                    <input type="text" name="email" class="email" required>
+                  </div>
+                  <div class="field">
+                    <label>Password</label>
+                    <input type="text" name="password" class="password" required>
+                  </div>
+                  <div class="cta-row">
+                    <button class="btn btn-default main-button" type="submit">Log in</button>
+                  </div>
+                </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+<!--       <script type="text/javascript" src="/js/main.js"> </script> -->
+<!--       <script type="text/javascript" src="/js/signup.js"> </script> -->
   </body>
 </html>

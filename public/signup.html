@@ -20,25 +20,35 @@
 
       <section role="region">
         <div class="row">
-          <div class="signup-header">
-            <h1>Sign up for a free account</h1>
-            <p class="app-description">Stay up to date on what’s new in Sacramento!</p>
+          <div class="form">
+            <div class="signup-header">
+              <h1>Sign up for a free account</h1>
+              <p class="app-description">Stay up to date on what’s new in Sacramento!</p>
+            </div>
+            <form id="signup-form">
+                <fieldset>
+                  <div class="field">
+                    <label>Email address</label><br>
+                    <input type="text" name="email" class="email" required>
+                  </div>
+                  <div class="field">
+                    <label>Password</label>
+                    <input type="text" name="password" class="password" required>
+                  </div>
+                  <div class="field">
+                    <label>Profile image url</label>
+                    <input type="text" name="image" class="image">
+                  </div>
+                  <div class="field">
+                    <label>Bio</label>
+                    <input type="text" name="bio" class="bio">
+                  </div>
+                  <div class="cta-row">
+                    <button class="btn btn-default main-button" type="submit">Sign up</button>
+                  </div>
+                </fieldset>
+            </form>
           </div>
-          <form id="signup-form">
-              <fieldset>
-                <div class="field">
-                  <label>Email address</label><br>
-                  <input type="text" name="email" class="email" required>
-                </div>
-                <div class="field">
-                  <label>Password</label>
-                  <input type="text" name="password" class="password" required>
-                </div>
-                <div class="cta-row">
-                  <button class="btn btn-default signup-button" type="submit">Sign up</button>
-                </div>
-              </fieldset>
-          </form>
         </div>
       </section>
 
