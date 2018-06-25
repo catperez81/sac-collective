@@ -11,7 +11,6 @@ body {
 }
 
 .collection-item {
-	height: 200px;
  	width: 50%;
  	margin: 50px auto 0px auto;
  	border: 1px solid grey;
@@ -24,13 +23,17 @@ body {
 .item-details {
 	display: inline-block;
 	line-height: 1.7em;
-	padding-left: 20px;
+	padding-left: 15px;
+  float:left;
+  width:47%
 }
 
 .profile-bio {
 	padding-bottom: 30px;
 }
-
+.clear{
+  clear: both;
+}
 a {
   text-decoration: none;
 }
@@ -41,7 +44,8 @@ p {
 
 .item-img {
 	float: left;
-	height: 100%;
+  display:inline-block;
+	height: 200px;
 }
 
 .item-type {
@@ -67,3 +71,15 @@ p {
   text-align: center;
   float: right;
 }
+
+
+
+@media (max-width: 870px) {
+  .item-img {
+  	width: 100%;
+    height:auto;
+  }
+  .item-details {
+    width:100%
+  }
+ }
