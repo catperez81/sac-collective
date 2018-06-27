@@ -23,17 +23,20 @@ body {
 .item-details {
 	display: inline-block;
 	line-height: 1.7em;
-	padding-left: 15px;
+	padding-left: 20px;
   float:left;
   width:47%
 }
 
 .profile-bio {
 	padding-bottom: 30px;
+  line-height: 1.7em;
 }
+
 .clear{
   clear: both;
 }
+
 a {
   text-decoration: none;
 }
@@ -54,8 +57,8 @@ p {
 	border-radius: 5px;
 	padding: 3px 3px;
 	width: 20%;
-	margin-left: 35%;
 	text-align: center;
+  margin-top: 20px;
 }
 
 .vote-badge {
@@ -72,14 +75,28 @@ p {
   float: right;
 }
 
+/*Mobile*/
 
+@media only screen and (max-width: 600px)  {
 
-@media (max-width: 870px) {
+  .profile-bio {
+    padding: 0px 10px 20px 10px;
+  }
   .item-img {
   	width: 100%;
     height:auto;
   }
   .item-details {
-    width:100%
+    width:90%;
+    padding-bottom: 20px;
   }
+
+  .item-type {
+    width: 36%;
+  }
+
+  .collection-item {
+    width: 70%;
+  }
+
  }
