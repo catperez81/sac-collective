@@ -28,9 +28,17 @@ body {
   width:47%
 }
 
+.profile-section {
+  padding-top: 10%;
+}
+
 .profile-bio {
 	padding-bottom: 30px;
   line-height: 1.7em;
+}
+
+.edit-link {
+  margin-bottom: 30px;
 }
 
 .clear{
