@@ -10,25 +10,63 @@ body {
   vertical-align: middle;
 }
 
-.feed-item {
- 	width: 50%;
- 	margin: 50px auto 0px auto;
- 	border: 1px solid grey;
+.feed {
+  padding-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+
+.collection-item {
+ 	width: 100%;
+ 	border: 1px solid #ECECEC;
  	border-radius: 10px;
  	background: white;
  	text-align: left;
- 	padding-bottom: 30px;
+ 	position: relative;
+  margin-bottom: 50px;
 }
 
 .item-details {
 	display: inline-block;
 	line-height: 1.7em;
 	padding-left: 20px;
+  float:left;
+  width:47%
 }
 
-ul {
-	list-style: none;
-	display: inline-block;
+.posted-by-img {
+  position: relative;
+  top: 10px;
+}
+
+h2 {
+  color: black;
+  font-size: 26px;
+  text-align: left;
+}
+
+.posted-by {
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.friend-name {
+  margin-bottom: 4px;
+}
+
+.friend-details {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.time-stamp {
+  font-size: 11px;
+  color: grey;
+}
+
+.clear{
+  clear: both;
 }
 
 a {
@@ -39,12 +77,10 @@ p {
 	margin: 0;
 }
 
-h3 {
-	margin-left: 12%;
-}
-
 .item-img {
 	float: left;
+  display:inline-block;
+	height: 200px;
 }
 
 .item-type {
@@ -53,8 +89,8 @@ h3 {
 	border-radius: 5px;
 	padding: 3px 3px;
 	width: 20%;
-	margin-left: 35%;
 	text-align: center;
+  margin-top: 20px;
 }
 
 .vote-badge {
@@ -64,6 +100,38 @@ h3 {
   padding: 6px;
   background: #F7E094;
   color: #666;
+  position: absolute;
+  top: -15px;
+  right: -15px;
   text-align: center;
   float: right;
 }
+
+/*Mobile*/
+
+@media only screen and (max-width: 600px)  {
+
+  .feed {
+    padding-top: 25%;
+  }
+
+  .item-img {
+  	width: 100%;
+    height:auto;
+  }
+  .item-details {
+    width:90%;
+    padding-bottom: 20px;
+  }
+
+  .item-type {
+    width: 36%;
+  }
+
+  .collection-item, .feed-date, .posted-by {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+ }
