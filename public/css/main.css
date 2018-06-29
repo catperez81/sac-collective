@@ -35,7 +35,6 @@ html, body, main {
   height: 40px;
   display: block;
 	float: left;
-  position: fixed;
 }
 
 .add-item{

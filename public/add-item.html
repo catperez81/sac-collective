@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>The Sacramento Collective</title>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/add-item.css">
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
@@ -30,17 +30,20 @@
                     <label>Search</label><br>
                     <input type="text" name="search" class="search" required>
                   </div>
-                  <div class="field">
-                    <label>Password</label>
-                    <input type="text" name="password" class="password" required>
+                  <div class="switch-field">
+                    <div class="switch-title">Three fields? Sure.</div>
+                    <input type="radio" id="switch_3_left" name="switch_3" value="yes" checked/>
+                    <label for="switch_3_left">Coffee</label>
+                    <input type="radio" id="switch_3_center" name="switch_3" value="maybe" />
+                    <label for="switch_3_center">Food</label>
+                    <input type="radio" id="switch_3_right" name="switch_3" value="no" />
+                    <label for="switch_4_right">Shopping</label>
+                    <input type="radio" id="switch_4_right" name="switch_4" value="no" />
+                    <label for="switch_4_right">Leisure</label>
                   </div>
                   <div class="field">
-                    <label>Profile image url</label>
-                    <input type="text" name="image" class="image">
-                  </div>
-                  <div class="field">
-                    <label>Bio</label>
-                    <input type="text" name="bio" class="bio">
+                    <label>Great for:</label>
+                    <input type="text" name="great-for" class="great-for">
                   </div>
                 </fieldset>
             </form>
