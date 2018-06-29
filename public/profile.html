@@ -49,13 +49,33 @@
     </div>
 
       <div id="ex1" class="modal">
-        <div class="row profile-section">
-          <div class="profile-img">
-            <img src="images/cat-profile.png" height="160px" border="0" alt="profile-image">
+        <div class="row">
+          <div class="form">
+            <div class="signup-header">
+              <h1>Edit your profile</h1>
+            </div>
+            <form id="signup-form">
+                <fieldset>
+                  <div class="field">
+                    <label>Email address</label><br>
+                    <input type="text" name="email" class="email" required>
+                  </div>
+                  <div class="field">
+                    <label>Password</label>
+                    <input type="text" name="password" class="password" required>
+                  </div>
+                  <div class="field">
+                    <label>Profile image url</label>
+                    <input type="text" name="image" class="image">
+                  </div>
+                  <div class="field">
+                    <label>Bio</label>
+                    <input type="text" name="bio" class="bio">
+                  </div>
+                </fieldset>
+            </form>
           </div>
-        <h1 class="profile-user">Cat Perez</h1>
-        <p class="profile-bio">Born & raised in NJ. 10 years in San Francisco. Cofounder in Health tech newly settling in Sacramento. 
-      </div>
+        </div>
         <a href="" rel="modal:save">Save</a>
         <a href="" rel="modal:close">Close</a>
       </div>

@@ -83,6 +83,49 @@ p {
   float: right;
 }
 
+/* edit modal */
+
+.form {
+  -webkit-box-shadow: 0 8px 6px -8px black;
+  -moz-box-shadow: 0 8px 6px -8px black;
+  box-shadow: 0 8px 6px -8px black;
+  padding: 0px;
+  background-color: white;
+  margin: 8% 10% 20% 10%; 
+  border-radius: 10px;
+}
+
+fieldset {
+  border: 0px;
+  font-size: 0;  
+}
+
+label {
+  text-align: left;
+  padding-bottom: 10px;
+  color: #14537d;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+}
+
+.field {
+  width: 100%;
+  padding: 0;
+  padding-bottom: 30px;
+  text-align: left;
+}
+
+input {
+  height: 40px;
+  width: 95%;
+  color: #3b3434;
+  font-size: 20px;
+  border-radius: 5px;
+  position: relative;
+  padding-left: 20px;
+}
+
 /*Mobile*/
 
 @media only screen and (max-width: 600px)  {
