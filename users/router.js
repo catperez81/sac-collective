@@ -22,7 +22,7 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
-  const stringFields = ['email', 'password', 'firstName', 'lastName'];
+  const stringFields = ['email', 'password', 'name', 'image', 'bio'];
   const nonStringField = stringFields.find(
     field => field in req.body && typeof req.body[field] !== 'string'
   );
@@ -36,13 +36,6 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
-  // If the email and password aren't trimmed we give an error.  Users might
-  // expect that these will work without trimming (i.e. they want the password
-  // "foobar ", including the space at the end).  We need to reject such values
-  // explicitly so the users know what's happening, rather than silently
-  // trimming them and expecting the user to understand.
-  // We'll silently trim the other fields, because they aren't credentials used
-  // to log in, so it's less of a problem.
   const explicityTrimmedFields = ['email', 'password'];
   const nonTrimmedField = explicityTrimmedFields.find(
     field => req.body[field].trim() !== req.body[field]
@@ -52,7 +45,7 @@ router.post('/', jsonParser, (req, res) => {
     return res.status(422).json({
       code: 422,
       reason: 'ValidationError',
-      message: 'Cannot start or end with whitespace',
+      message: 'We noticed some blank spaces. You cannot start or end with these.',
       location: nonTrimmedField
     });
   }
@@ -63,8 +56,6 @@ router.post('/', jsonParser, (req, res) => {
     },
     password: {
       min: 10,
-      // bcrypt truncates after 72 characters, so let's not give the illusion
-      // of security by storing extra (unused) info
       max: 72
     }
   };
@@ -92,11 +83,10 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
   //change to actual fields//
-  let {email, password, firstName = '', lastName = ''} = req.body;
-  // email and password come in pre-trimmed, otherwise we throw an error
-  // before this
-  firstName = firstName.trim();
-  lastName = lastName.trim();
+  let {email, password, name = '', image = '', bio = ''} = req.body;
+  name = name.trim();
+  image = image.trim();
+  bio = bio.trim();
 
   return User.find({email})
     .count()
@@ -106,7 +96,7 @@ router.post('/', jsonParser, (req, res) => {
         return Promise.reject({
           code: 422,
           reason: 'ValidationError',
-          message: 'email already taken',
+          message: 'This email is already taken',
           location: 'email'
         });
       }
@@ -117,8 +107,9 @@ router.post('/', jsonParser, (req, res) => {
       return User.create({
         email,
         password: hash,
-        firstName,
-        lastName
+        name,
+        image,
+        bio
       });
     })
     .then(user => {
