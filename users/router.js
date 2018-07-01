@@ -116,8 +116,6 @@ router.post('/', jsonParser, (req, res) => {
       return res.status(201).json(user.serialize());
     })
     .catch(err => {
-      // Forward validation errors on to the client, otherwise give a 500
-      // error because something unexpected has happened
       if (err.reason === 'ValidationError') {
         return res.status(err.code).json(err);
       }
@@ -125,10 +123,10 @@ router.post('/', jsonParser, (req, res) => {
     });
 });
 
-// router.get('/', (req, res) => {
-//   return User.find()
-//     .then(users => res.json(users.map(user => user.serialize())))
-//     .catch(err => res.status(500).json({message: 'Internal server error'}));
-// });
+router.get('/', (req, res) => {
+  return User.find()
+    .then(users => res.json(users.map(user => user.serialize())))
+    .catch(err => res.status(500).json({message: 'Internal server error'}));
+});
 
 module.exports = {router};

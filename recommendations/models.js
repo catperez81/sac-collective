@@ -20,7 +20,7 @@ const RecommendationSchema = mongoose.Schema({
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId, 
-    ref: ‘User’ 
+    ref: "User" 
   },
   score: {
     type: Number,
@@ -33,11 +33,12 @@ RecommendationSchema.methods.serialize = function() {
     businessName: this.businessName || '',
     businessType: this.businessType || '',
     recommendation: this.recommendation || '',
+    id: this._id || '',
     userId: this.userId || '',
     score: this.score || 0
   };
 };
 
-const Recommendation = mongoose.model("User", RecommendationSchema);
+const Recommendation = mongoose.model("Recommendation", RecommendationSchema);
 
 module.exports = { Recommendation };

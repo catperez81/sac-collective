@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const bodyParser = require('body-parser');
-const {User} = require('./models');
+const {Recommendation} = require('./models');
 
 const router = express.Router();
 const jsonParser = bodyParser.json();
@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', jsonParser, (req, res) => {
   //change to actual fields//
-  const requiredFields = ['title','content','author'];
+  const requiredFields = ['businessName','businessType','recommendation'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -40,10 +40,9 @@ router.post('/', jsonParser, (req, res) => {
 
   Recommendation
   .create({
-    author: req.body.author,
-    title: req.body.title,
-    content: req.body.content,
-    publishDate: req.body.publishDate
+    businessName: req.body.businessName,
+    businessType: req.body.businessType,
+    recommendation: req.body.recommendation
   })
   .then(recommendation => res.status(201).json(recommendation.serialize()))
   .catch(err => {
@@ -61,7 +60,7 @@ router.put('/:id', jsonParser, (req, res) => {
 
   const updated = {};
   //change to actual fields//
-  const updateableFields = ['title', 'content', 'author'];
+  const updateableFields = ['businessName', 'businessType', 'recommendation'];
   updateableFields.forEach(field => {
     if (field in req.body) {
       updated[field] = req.body[field];
