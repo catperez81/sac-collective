@@ -1,7 +1,5 @@
 console.log("add item page");
 
-
-
 $(function() {
   setFormListener()
 });
@@ -13,9 +11,9 @@ function setFormListener(){
     event.preventDefault();
 
     let recommendation = {
-      businessName: $(".search").val(),
+      businessName: $(".biz-name").val(),
       businessType: "coffee",
-      recommendation:  $(".great-for").val()
+      recommendation: $(".recommendation").val()
     }
 
     $.ajax({

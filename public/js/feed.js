@@ -15,50 +15,27 @@ const settings = {
 
   $.ajax(settings);
 
-
-
-
-
   function renderResults() {
-    const results = state.doctors.map((item, index) => renderDoctor(item, index));
-    $(".doctors").html(results);
+    const results = settings.map((item, index) => renderResults(item, index));
+    $(".feed").html(results);
     let totalResults = results.length;
-    var html = `
-      <div class="results">
-        <p class="total-results">We've found ${totalResults} doctors</p>
-      </div>`;
-    $(".total-results").html(html);
-    if (state.doctors.length === 0) {
-      $(".total-results").html(
-        "Sorry, we could not find any doctors. Try another search."
-      );
-    }
+		return `
+      <div class="collection-item">
+        <img src="images/placeholder-img.png" class="item-img" border="0" alt="profile-image">
+        <div class="item-details">
+          <h3 class="biz-name">${results.businessName}</h3>
+          <p class="biz-type">${results.businessType}</p>
+          <p class="recommendation">${results.recommendation}</p> 
+        </div>
+	      <div class="posted-by">
+	        <img src="images/cat-profile.png" height="50px" border="0" alt="profile-image" class="posted-by-img">
+	        <div class="friend-details">
+	          <h3 class="friend-name">Jan Janetson</h3>
+	          <p class="time-stamp">June 27, 2018</p>
+	        </div>
+	      </div>
+	    </div>
+  	<br>`;
   }
 
-  function renderDoctor(doctor, index) {
-    let distance = Math.round(doctor.practices[0].distance);
-    let doctorSpecialties = doctor.specialties.map(function(specialty, index) {
-      return `<span>${specialty.name}</span>`;
-    });
-    return `
-      <div class="results">
-        <div class="card-content">
-          <div class="doc-image">
-            <img src="${doctor.profile.image_url}" class="img-circle">
-          </div>
-          <div class="doctor-info">
-            <h3>${doctor.profile.first_name} ${doctor.profile.last_name}</h3>
-            <p>${doctor.profile.gender}</p>
-            <p>${doctor.practices[0].visit_address.street},
-               ${doctor.practices[0].visit_address.city},
-               ${doctor.practices[0].visit_address.state_long}</p>
-            <p>${distance} miles away</p>
-            <p>${doctor.specialties[0] ? doctor.specialties[0].name : ""}</p>
-          </div>
-          <div class="doctor-profile-button">
-            <button data-index="${index}" class="doctor-profile type="button">View profile</button>
-          </div>
-        </div>
-      </div>
-    <br>`;
-  }
+  renderResults();

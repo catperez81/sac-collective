@@ -16,6 +16,7 @@
         <a href="/add-item.html"><button class="btn btn-default add-item">Add item</button></a>
         <a href="/find-friends.html"><button class="btn btn-default find-friends">Find friends</button></a>
         <a href="" class="logout">Log out</a>
+        <a href="#"><img src="images/hamburger.png" class="hamburger" display="none"></a>
       </nav>
     </div>
 
@@ -26,23 +27,21 @@
           <form id="recommendation-form">
             <fieldset>
               <div class="field">
-                <label>Search</label><br>
-                <input type="text" name="search" class="search" required>
+                <label>Business name</label><br>
+                <input type="text" name="biz-name" class="biz-name" required>
               </div>
+              <h2 class="toggle-title">Type of business</h2>
               <div class="switch-field">
-                <div class="switch-title">Three fields? Sure.</div>
-                  <input type="radio" id="switch_3_left" name="switch_3" value="yes" checked/>
-                  <label for="switch_3_left">Coffee</label>
-                  <input type="radio" id="switch_3_center" name="switch_3" value="maybe" />
-                  <label for="switch_3_center">Food</label>
-                  <input type="radio" id="switch_3_right" name="switch_3" value="no" />
-                  <label for="switch_3_right">Shopping</label>
-                  <input type="radio" id="switch_3_far_right" name="switch_3" value="no" />
-                  <label for="switch_3_far_right">Leisure</label>
-                </div>
+                <input type="radio" id="switch_3_left" name="switch_3" value="yes" checked/>
+                <label for="switch_3_left">Coffee</label>
+                <input type="radio" id="switch_3_center" name="switch_3" value="maybe" />
+                <label for="switch_3_center">Food</label>
+                <input type="radio" id="switch_3_right" name="switch_3" value="no" />
+                <label for="switch_3_right">Shopping</label>
+              </div>
                 <div class="field">
-                  <label>What to know:</label>
-                  <input type="text" name="great-for" class="great-for">
+                  <label>What do you recommend?</label>
+                  <input type="text" name="recommendation" class="recommendation">
                 </div>
                 <div class="cta-row">
                   <button class="btn btn-default main-button" type="submit">Add to my collection</button>
