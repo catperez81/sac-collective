@@ -37,6 +37,10 @@ html, body, main {
 	float: left;
 }
 
+.hamburger, .hamburger-dropdown {
+  display: none;
+}
+
 .add-item, .find-friends{
   padding: 10px 20px;
   margin-right: 20px;
@@ -59,6 +63,11 @@ html, body, main {
 @media only screen and (max-width: 600px) {
 
 /* nav mobile responsive */ 
+
+  .hamburger-dropdown {
+    display: none;
+  }
+
   .hamburger {
     display: inline-block;
     float: right;

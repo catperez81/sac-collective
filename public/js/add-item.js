@@ -36,3 +36,12 @@ function setFormListener(){
 
   })
 }
+
+function hamburger(){
+ $(".hamburger").onclick(function(){
+  console.log('test');
+    $(".hamburger-dropdown").show();
+  })
+}
+
+hamburger();
