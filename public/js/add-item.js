@@ -38,10 +38,10 @@ function setFormListener(){
 }
 
 function hamburger(){
- $(".hamburger").onclick(function(){
-  console.log('test');
-    $(".hamburger-dropdown").show();
-  })
+ $(".hamburger").click(function(event){
+    console.log('test');
+    $(".hamburger-dropdown").toggle();
+  });
 }
 
 hamburger();
