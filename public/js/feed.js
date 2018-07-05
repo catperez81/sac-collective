@@ -1,22 +1,25 @@
 console.log("feed page");
 
 const settings = {
-    url: '/api/recommendations',
-    dataType: "json",
-    type: "GET",
-    success: function(response) {
-      console.log(response);
-      renderResults(response)
-    },
-    error: function(error) {
-      console.log(error);
-    }
-  };
+  url: "/api/recommendations",
+  dataType: "json",
+  type: "GET",
+  success: function(response) {
+    console.log(response);
+    renderResults(response);
+  },
+  error: function(error) {
+    console.log(error);
+  },
+  headers: {
+    Authorization: "Bearer " + authToken
+  }
+};
 
-  $.ajax(settings);
+$.ajax(settings);
 
 function result(recommendation, index) {
-	return `
+  return `
 		<div class="posted-by">
     	<img src="images/cat-profile.png" height="50px" border="0" alt="profile-image" class="posted-by-img">
     	<div class="friend-details">
@@ -35,7 +38,7 @@ function result(recommendation, index) {
         <div class="item-type"><p>${recommendation.businessType}</p></div>
       </div>
       <div class="clear"></div>
-    </div>`
+    </div>`;
 }
 
 function renderResults(recommendations) {
