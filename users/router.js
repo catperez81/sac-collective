@@ -55,7 +55,7 @@ router.post('/', jsonParser, (req, res) => {
       min: 1
     },
     password: {
-      min: 10,
+      min: 6,
       max: 72
     }
   };
@@ -119,11 +119,13 @@ router.post('/', jsonParser, (req, res) => {
       if (err.reason === 'ValidationError') {
         return res.status(err.code).json(err);
       }
+      console.log(err);
       res.status(500).json({code: 500, message: 'Internal server error'});
     });
 });
 
 router.get('/', (req, res) => {
+  console.log(req.query);
   return User.find()
     .then(users => res.json(users.map(user => user.serialize())))
     .catch(err => res.status(500).json({message: 'Internal server error'}));
