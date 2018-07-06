@@ -53,7 +53,7 @@ html, body, main {
   float: right;
 }
 
-.logout {
+.logout, .profile {
 	float: right;
 	padding:10px 20px 0px 0px;
 }
@@ -74,7 +74,7 @@ html, body, main {
     padding-right: 20px;
   }
 
-  .add-item, .find-friends, .logout {
+  .add-item, .find-friends, .logout, .profile {
     display: none;
   }
 }

@@ -133,10 +133,12 @@ input {
   .profile-bio {
     padding: 0px 10px 20px 10px;
   }
+
   .item-img {
   	width: 100%;
     height:auto;
   }
+  
   .item-details {
     width:90%;
     padding-bottom: 20px;

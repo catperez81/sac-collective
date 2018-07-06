@@ -11,10 +11,10 @@ body {
 }
 
 .feed {
-  padding-top: 10%;
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
+  width: 40%;
 }
 
 .collection-item {
@@ -112,11 +112,12 @@ p {
 @media only screen and (max-width: 600px)  {
 
   .feed {
-    padding-top: 25%;
+    width: 100%;
+    margin-left: 15%;
   }
 
   .item-img {
-  	width: 100%;
+    width: 100%;
     height:auto;
   }
   .item-details {
@@ -128,10 +129,8 @@ p {
     width: 36%;
   }
 
-  .collection-item, .feed-date, .posted-by {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+  .collection-item {
+    width: 70%;
   }
 
  }

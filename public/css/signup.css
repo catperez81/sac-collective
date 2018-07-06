@@ -41,7 +41,7 @@ p {
   box-shadow: 0 8px 6px -8px black;
   padding: 40px;
   background-color: white;
-  margin: 8% 30% 20% 30%;	
+  margin: 8% 30% 10% 30%;	
   border-radius: 10px;
 }
 
@@ -74,6 +74,11 @@ input {
   border-radius: 5px;
   position: relative;
   padding-left: 20px;
+}
+
+.login-link {
+  font-size: 20px;
+  text-align: center;
 }
 
 /*Mobile*/
