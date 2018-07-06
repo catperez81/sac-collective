@@ -45,10 +45,6 @@ body {
   clear: both;
 }
 
-a {
-  text-decoration: none;
-}
-
 p {
 	margin: 0;
 }
@@ -138,7 +134,7 @@ input {
   	width: 100%;
     height:auto;
   }
-  
+
   .item-details {
     width:90%;
     padding-bottom: 20px;
