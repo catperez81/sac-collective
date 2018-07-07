@@ -126,17 +126,28 @@ input {
   border-radius: 0 4px 4px 0;
 }
 
-.posted-by {
-  width: 80%;
+#friend-results {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  width: 100%;
+  background-size: cover;
+  background: #F7E094;
+  border-top: 1px solid #ECECEC;
+}
+
+.friend {
+  width: 50%;
   border: 1px solid #ECECEC;
   border-radius: 10px;
   background: white;
   text-align: left;
   margin-bottom: 50px;
+  display: inline-block;
 }
 
 .friend-details {
-  display: inline-block;
   line-height: 1.7em;
   padding-left: 20px;
   float:left;

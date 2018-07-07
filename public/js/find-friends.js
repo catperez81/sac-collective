@@ -35,17 +35,18 @@ function setFormListener() {
 
 function result(friend, index) {
   return `
-		<div class="posted-by">
-	    <img src="images/cat-profile.png" height="50px" border="0" alt="profile-image" class="posted-by-img">
-	    <div class="friend-details">
-	      <h3 class="friend-name">${friend.name}</h3>
-	      <h3 class="friend-email">${friend.email}</h3>
-        <button class="btn btn-default follow-friend">Follow</button>
-    	</div>
-    </div>`;
+    		<div class="friend">
+    	    <div class="friend-details">
+            <img src="images/cat-profile.png" height="50px" border="0" alt="profile-image" class="posted-by-img">
+    	      <h3 class="friend-name">${friend.name}</h3>
+    	      <h3 class="friend-email">${friend.email}</h3>
+            <button class="btn btn-default follow-friend">Follow</button>
+        	</div>
+        </div>`;
 }
 
 function renderResults(friends) {
   const results = friends.map((item, index) => result(item, index));
-  $(".friend-results").html(results);
+  $("#friend-results").show();
+  $("#friend-results").html(results);
 }
