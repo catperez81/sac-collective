@@ -1,15 +1,29 @@
 console.log("global js file");
 
+let count = 
+
 $(function() {
   upvoteListener();
 });
 
 function upvoteListener() {
-  $(".vote-badge").click(function() {
+  $("#up-arrow").click(function() {
     console.log('testing');
     var counter = 0;
     counter++;
-      $(".vote-badge").text(counter);
+      $(".vote-count").text(counter);
   });
 }
 
+$(function() {
+  downvoteListener();
+});
+
+function downvoteListener() {
+  $("#down-arrow").click(function() {
+    console.log('testing');
+    var counter = 0;
+    counter--;
+      $(".vote-count").text(counter);
+  });
+}
