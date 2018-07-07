@@ -126,6 +126,24 @@ input {
   border-radius: 0 4px 4px 0;
 }
 
+.posted-by {
+  width: 80%;
+  border: 1px solid #ECECEC;
+  border-radius: 10px;
+  background: white;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.friend-details {
+  display: inline-block;
+  line-height: 1.7em;
+  padding-left: 20px;
+  float:left;
+  width:47%;
+}
+
+
 /*Mobile*/
 
 @media only screen and (max-width: 600px) {

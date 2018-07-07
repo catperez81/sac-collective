@@ -40,6 +40,7 @@ function result(friend, index) {
 	    <div class="friend-details">
 	      <h3 class="friend-name">${friend.name}</h3>
 	      <h3 class="friend-email">${friend.email}</h3>
+        <button class="btn btn-default follow-friend">Follow</button>
     	</div>
     </div>`;
 }

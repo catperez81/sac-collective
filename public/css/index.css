@@ -43,6 +43,8 @@ h2 {
 
 .value-img {
 	display: inline-block;
+	width: 100%;
+    height: auto;
 }
 
 .footer {
