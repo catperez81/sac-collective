@@ -214,6 +214,16 @@ input {
     padding-right: 20px;
   }
 
+  .friend {
+    width: 80%;
+  }
+
+  .follow-button {
+    float: none;
+    position: inherit; 
+    padding-top: 20px;
+  }
+
  }
 
 
