@@ -29,7 +29,8 @@ function result(recommendation, index) {
     </div>
 		<div class="collection-item">
       <div class="vote-badge">
-        <img src="images/upvote-arrow.png" height="12px" id="arrow" border="0" alt="upvote arrow"><strong>14</strong>
+        <img src="images/upvote-arrow.png" height="12px" id="arrow" border="0" alt="upvote arrow">
+        <span class="vote-count"></span>
       </div>
       <img src="images/placeholder-img.png" class="item-img" border="0" alt="profile-image">
       <div class="item-details">

@@ -138,7 +138,7 @@ input {
 }
 
 .friend {
-  width: 50%;
+  width: 60%;
   border: 1px solid #ECECEC;
   border-radius: 10px;
   background: white;
@@ -167,7 +167,7 @@ input {
 .follow-button {
   float: right;
   position: relative;
-  left: 300px;
+  left: 200px;
   bottom: 36px;
 }
 
@@ -225,6 +225,20 @@ input {
   }
 
  }
+
+ @media only screen and (max-width: 1000px) {
+
+  .follow-button {
+    float: none;
+    position: inherit; 
+    padding-top: 20px;
+  }
+
+ }
+
+
+
+
 
 
 
