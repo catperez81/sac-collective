@@ -37,11 +37,13 @@ function result(friend, index) {
   return `
     		<div class="friend">
     	    <div class="friend-details">
-            <img src="images/cat-profile.png" height="50px" border="0" alt="profile-image" class="posted-by-img">
-    	      <h3 class="friend-name">${friend.name}</h3>
-    	      <h3 class="friend-email">${friend.email}</h3>
-            <button class="btn btn-default follow-friend">Follow</button>
-        	</div>
+            <img src="images/cat-profile.png" border="0" alt="profile-image" class="friend-img">
+    	      <p class="friend-name">${friend.name}</p>
+    	      <p class="friend-email">${friend.email}</p>
+            <div class="follow-button">
+              <button class="btn btn-default follow-friend">Follow</button>
+            </div>        	
+          </div>
         </div>`;
 }
 
