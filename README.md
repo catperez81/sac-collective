@@ -2,17 +2,19 @@
 
 ###To run dev server
 
-1. `source .env`
-1. `nodemon`
+1.  `source .env`
+1.  `nodemon`
 
-# Steps.
+# Pending
 
-1. HTML + CSS
+1.  Css cleanup
+1.  Testing
+1.  up.vote/downvote
 
-1. Marketing Landing Page.
-1. [session] Models
+1.  Add Friends
+1.  Link reviews to creator.
+1.  Yelp
 
 ## Extra
 
-1. Yelp
-1. Images
+1.  Images
