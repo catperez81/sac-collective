@@ -13,22 +13,22 @@
   <div class="row loggedin-nav">
     <nav role="navigation">
       <a href="/index.html"><img src="images/sac-collective-logo.png" id="logo" border="0" alt="sac-collective logo">
-        <a href="/add-item.html"><button class="btn btn-default add-item">Add item</button></a>
-        <a href="/find-friends.html"><button class="btn btn-default find-friends">Find friends</button></a>
-        <a href="" class="logout">Log out</a>
-        <a href="#"><img src="images/hamburger.png" class="hamburger"></a>
-        <div class="hamburger-dropdown">
-          <button class="dropbtn">Dropdown
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
+      <a href="/add-item.html"><button class="btn btn-default add-item">Add item</button></a>
+      <a href="/find-friends.html"><button class="btn btn-default find-friends">Find friends</button></a>
+      <a href="" class="logout">Log out</a>
+      <a href="#"><img src="images/hamburger.png" class="hamburger"></a>
+      <div class="hamburger-dropdown">
+        <button class="dropbtn">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
+  </div>
 
     <div class="row form">
       <div class="signup-header">
@@ -38,18 +38,14 @@
       <form id="item-form">
         <fieldset>
           <div class="field">
-            <label>Business name</label><br>
+            <label>Business name</label> 
             <input type="text" name="biz-name" class="biz-name" required>
           </div>
           <div class="cta-row">
-            <button class="btn btn-default main-button" type="submit">Search Businesses</button>
+            <button class="btn btn-default main-button" type="submit">Search</button>
           </div>
         </fieldset>
       </form>
-
-      <div class="results"></div>
-      <div class="selected"></div>
-
 
       <form id="recommendation-form" hidden>
         <fieldset>
@@ -67,12 +63,13 @@
             <label>What do you recommend?</label>
             <input type="text" name="recommendation" class="recommendation">
           </div>
-          <div class="cta-row">
-            <button class="btn btn-default main-button" type="submit">Add to my collection</button>
-          </div>
         </fieldset>
       </form>
+      <div class="selected"></div>
     </div>
+
+    <div class="results"></div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/protected-page.js"> </script>
     <script type="text/javascript" src="/js/main.js"> </script>

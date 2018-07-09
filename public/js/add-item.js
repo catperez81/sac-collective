@@ -64,13 +64,16 @@ function setFormListener() {
 function result(recommendation, index) {
   return `
 		<div class="business-recommendation">
-      <img class="business-img" src="${
+      <div class="item-details">
+       <img class="business-img" src="${
         recommendation.image_url
       }" class="item-img" border="0" alt="profile-image">
-      <div class="item-details">
         <h3>${recommendation.name}</h3>
         <p>${recommendation.location.address1}</p>
         <div class="item-type"><p>${recommendation.display_phone}</p></div>
+        <div class="add-row">
+          <button class="btn btn-default add-button" type="add">Add</button>
+        </div>    
       </div>
       <div class="clear"></div>
     </div>`;
