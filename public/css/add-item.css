@@ -183,15 +183,20 @@ input {
     padding-bottom: 0px;
   }
 
-  .item-form-1, #item-form-2 {
-    margin: 7%;
-    padding: 7%;
+  .form {
+    margin: 5%;
     text-align: center;
   }
 
+  .business-recommendation {
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .switch-field label {
-    width: 44px;
+    width: 40px;
     font-size: 13px;
-    padding: 12px 24px;
+    padding: 12px 22px;
   }
 }
