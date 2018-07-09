@@ -28,16 +28,16 @@ function result(recommendation, index) {
     	</div>
     </div>
 		<div class="collection-item">
-      <div class="vote">
-        <img src="images/upvote-button.png" height="36px" id="up-arrow" border="0" alt="upvote arrow">
-        <span class="vote-count">0</span>
-        <img src="images/downvote-button.png" height="36px" id="down-arrow" border="0" alt="downvote arrow">
-      </div>
       <img src="images/placeholder-img.png" class="item-img" border="0" alt="profile-image">
       <div class="item-details">
         <h3>${recommendation.businessName}</h3>
         <p>${recommendation.recommendation}</p>
         <div class="item-type"><p>${recommendation.businessType}</p></div>
+      </div>
+      <div class="vote">
+        <img src="images/upvote-button.png" height="36px" id="up-arrow" border="0" alt="upvote arrow">
+        <span class="vote-count">0</span>
+        <img src="images/downvote-button.png" height="36px" id="down-arrow" border="0" alt="downvote arrow">
       </div>
       <div class="clear"></div>
     </div>`;
