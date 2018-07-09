@@ -15,13 +15,13 @@ function setFormListener() {
 
     $.ajax({
       url: "/api/yelp",
-      data: JSON.stringify(query),
+      data: query,
       error: function(error) {
         console.log("error", error);
       },
-      success: function(data) {
-        console.log("got data");
-        console.log(data);
+      success: function(businesses) {
+        console.log(businesses);
+        renderResults(businesses);
       },
       // headers: {
       //   Authorization: "Bearer " + YELP_API_KEY
@@ -61,6 +61,26 @@ function setFormListener() {
   });
 }
 
+function result(recommendation, index) {
+  return `
+		<div class="business-recommendation">
+      <img class="business-img" src="${
+        recommendation.image_url
+      }" class="item-img" border="0" alt="profile-image">
+      <div class="item-details">
+        <h3>${recommendation.name}</h3>
+        <p>${recommendation.location.address1}</p>
+        <div class="item-type"><p>${recommendation.display_phone}</p></div>
+      </div>
+      <div class="clear"></div>
+    </div>`;
+}
+
+function renderResults(businesses) {
+  const results = businesses.map((item, index) => result(item, index));
+  $(".results").html(results);
+}
+
 function hamburger() {
   $(".hamburger").click(function(event) {
     console.log("test");
@@ -69,3 +89,13 @@ function hamburger() {
 }
 
 hamburger();
+businessClick();
+
+function businessClick() {
+  $(".results").on("click", ".business-recommendation", function(event) {
+    $(".selected").html($(this));
+    $(".results").hide();
+    $("#item-form").hide();
+    $("#recommendation-form").show();
+  });
+}

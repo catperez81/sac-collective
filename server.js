@@ -48,14 +48,16 @@ app.get("/api/protected", jwtAuth, (req, res) => {
 
 // A protected endpoint which needs a valid JWT to access it
 app.get("/api/yelp", (req, res) => {
+  console.log(req.query);
+  console.log(req.params);
+
   yelp_api
     .search({
       term: req.query.term,
       location: "Sacramento, CA"
     })
     .then(response => {
-      console.log(response.jsonBody);
-      res.json(response.jsonBody);
+      res.json(response.jsonBody.businesses);
     })
     .catch(e => {
       res.send("error");
