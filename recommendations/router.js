@@ -31,7 +31,13 @@ router.get("/:id", (req, res) => {
 
 router.post("/", jsonParser, (req, res) => {
   //change to actual fields//
-  const requiredFields = ["businessName", "businessType", "recommendation"];
+  const requiredFields = [
+    "businessName",
+    "businessType",
+    "recommendation",
+    "image_url",
+    "yelp_id"
+  ];
   for (let i = 0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -44,7 +50,9 @@ router.post("/", jsonParser, (req, res) => {
   Recommendation.create({
     businessName: req.body.businessName,
     businessType: req.body.businessType,
-    recommendation: req.body.recommendation
+    recommendation: req.body.recommendation,
+    image_url: req.body.image_url,
+    yelp_id: req.body.yelp_id
   })
     .then(recommendation => res.status(201).json(recommendation.serialize()))
     .catch(err => {
@@ -62,7 +70,13 @@ router.put("/:id", jsonParser, (req, res) => {
 
   const updated = {};
   //change to actual fields//
-  const updateableFields = ["businessName", "businessType", "recommendation"];
+  const updateableFields = [
+    "businessName",
+    "businessType",
+    "recommendation",
+    "image_url",
+    "yelp_id"
+  ];
   updateableFields.forEach(field => {
     if (field in req.body) {
       updated[field] = req.body[field];

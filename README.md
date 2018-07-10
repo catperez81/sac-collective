@@ -13,7 +13,6 @@
 
 1.  Add Friends
 1.  Link reviews to creator.
-1.  Yelp
 
 ## Extra
 

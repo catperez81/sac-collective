@@ -28,7 +28,11 @@ function result(recommendation, index) {
     	</div>
     </div>
 		<div class="collection-item">
-      <img src="images/placeholder-img.png" class="item-img" border="0" alt="profile-image">
+      <img src="${
+        recommendation.image_url
+          ? recommendation.image_url
+          : "images/placeholder-img.png"
+      }" class="item-img" border="0" alt="profile-image">
       <div class="item-details">
         <h3>${recommendation.businessName}</h3>
         <p>${recommendation.recommendation}</p>

@@ -5,6 +5,11 @@ $(function() {
   setFormListener();
 });
 
+let state = {
+  businesses: [],
+  recommendedPlace: ""
+};
+
 function setFormListener() {
   $("#item-form").submit(function(event) {
     event.preventDefault();
@@ -21,7 +26,8 @@ function setFormListener() {
       },
       success: function(businesses) {
         console.log(businesses);
-        renderResults(businesses);
+        state.businesses = businesses;
+        renderResults(state.businesses);
       },
       // headers: {
       //   Authorization: "Bearer " + YELP_API_KEY
@@ -36,10 +42,13 @@ function setFormListener() {
     event.preventDefault();
 
     let recommendation = {
-      // businessName: $(".biz-name").val(),
-      businessType: "coffee",
-      recommendation: $(".recommendation").val()
+      businessName: state.recommendedPlace.name,
+      businessType: "coffee", // TODO!!!
+      recommendation: $(".recommendation").val(),
+      image_url: state.recommendedPlace.image_url,
+      yelp_id: state.recommendedPlace.id
     };
+    console.log(recommendation);
 
     $.ajax({
       url: `/api/recommendations/`,
@@ -63,17 +72,17 @@ function setFormListener() {
 
 function result(recommendation, index) {
   return `
-		<div class="business-recommendation">
+		<div class="business-recommendation" data-index="${index}">
       <div class="item-details">
        <img class="business-img" src="${
-        recommendation.image_url
-      }" class="item-img" border="0" alt="profile-image">
+         recommendation.image_url
+       }" class="item-img" border="0" alt="profile-image">
         <h3>${recommendation.name}</h3>
         <p>${recommendation.location.address1}</p>
         <div class="item-type"><p>${recommendation.display_phone}</p></div>
         <div class="add-row">
           <button class="btn btn-default add-button" type="add">Add</button>
-        </div>    
+        </div>
       </div>
       <div class="clear"></div>
     </div>`;
@@ -96,9 +105,12 @@ businessClick();
 
 function businessClick() {
   $(".results").on("click", ".business-recommendation", function(event) {
-    $(".selected").html($(this));
+    $(".selected").html("<h1>Currently recommending: </h1> ");
+    $(".selected").append($(this));
     $(".results").hide();
     $("#item-form").hide();
     $("#recommendation-form").show();
+    state.recommendedPlace = state.businesses[$(this).attr("data-index")];
+    console.log(state.recommendedPlace);
   });
 }
