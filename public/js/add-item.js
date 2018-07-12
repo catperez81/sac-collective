@@ -43,7 +43,7 @@ function setFormListener() {
 
     let recommendation = {
       businessName: state.recommendedPlace.name,
-      businessType: "coffee", // TODO!!!
+      businessType: $("#recommendation-form input[type='radio']:checked").val(),  
       recommendation: $(".recommendation").val(),
       image_url: state.recommendedPlace.image_url,
       yelp_id: state.recommendedPlace.id

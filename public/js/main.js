@@ -1,7 +1,5 @@
 console.log("global js file");
 
-let count = 
-
 $(function() {
   upvoteListener();
 });
