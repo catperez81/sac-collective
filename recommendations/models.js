@@ -29,6 +29,10 @@ const RecommendationSchema = mongoose.Schema({
     type: String,
     default: ""
   },
+  yelp_url: {
+    type: String,
+    default: ""
+  },
   yelp_id: {
     // TODO: YOU CAN USE THIS ID TO GET MORE STUFF FROM THE API
     type: String,
@@ -45,6 +49,7 @@ RecommendationSchema.methods.serialize = function() {
     userId: this.userId || "",
     score: this.score || 0,
     image_url: this.image_url,
+    yelp_url: this.yelp_url,
     yelp_id: this.yelp_id
   };
 };

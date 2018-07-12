@@ -34,7 +34,11 @@ function result(recommendation, index) {
           : "images/placeholder-img.png"
       }" class="item-img" border="0" alt="profile-image">
       <div class="item-details">
-        <h3>${recommendation.businessName}</h3>
+
+        <a href="${recommendation.yelp_url}">
+          <h3>${recommendation.businessName}</h3>
+        </a>
+
         <p>${recommendation.recommendation}</p>
         <div class="item-type"><p>${recommendation.businessType}</p></div>
       </div>

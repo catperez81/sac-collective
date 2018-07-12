@@ -36,7 +36,8 @@ router.post("/", jsonParser, (req, res) => {
     "businessType",
     "recommendation",
     "image_url",
-    "yelp_id"
+    "yelp_id",
+    "yelp_url"
   ];
   for (let i = 0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
@@ -52,7 +53,8 @@ router.post("/", jsonParser, (req, res) => {
     businessType: req.body.businessType,
     recommendation: req.body.recommendation,
     image_url: req.body.image_url,
-    yelp_id: req.body.yelp_id
+    yelp_id: req.body.yelp_id,
+    yelp_url: req.body.yelp_url
   })
     .then(recommendation => res.status(201).json(recommendation.serialize()))
     .catch(err => {
@@ -75,7 +77,8 @@ router.put("/:id", jsonParser, (req, res) => {
     "businessType",
     "recommendation",
     "image_url",
-    "yelp_id"
+    "yelp_id",
+    "yelp_url"
   ];
   updateableFields.forEach(field => {
     if (field in req.body) {
