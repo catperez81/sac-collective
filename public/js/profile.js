@@ -20,16 +20,48 @@ function parseJwt(token) {
   return JSON.parse(window.atob(base64));
 }
 
-// function setVoteListener() {
-//   $(".vote-badge").click(function() {
-//   	console.log('testing');
-//   	let voteCount = parseInt($("~ .count", this).text());
-// 		if($(this).hasClass("up")) {
-//       var voteCount = voteCount + 1;
-//        $("~ .vote-count", this).text(count);
-//     } else {
-//       var count = count - 1;
-//       $("~ .vote-count", this).text(count);
-//     	}
-// 		});
-// }
+const settings = {
+  url: "/api/recommendations",
+  dataType: "json",
+  type: "GET",
+  success: function(response) {
+    console.log(response);
+    renderResults(response);
+  },
+  error: function(error) {
+    console.log(error);
+  },
+  headers: {
+    Authorization: "Bearer " + authToken
+  }
+};
+
+$.ajax(settings);
+
+function result(recommendation, index) {
+  return `
+		<div class="collection-item">
+	      <img src="${
+	        recommendation.image_url
+	          ? recommendation.image_url
+	          : "images/placeholder-img.png"
+	      } " class="item-img" border="0" alt="profile-image">
+	      
+	      <div class="item-details">
+
+	        <a href="${recommendation.yelp_url}">
+	          <h3>${recommendation.businessName}</h3>
+	        </a>
+
+	      	<p>${recommendation.recommendation}</p>
+	      <div class="item-type"><p>${recommendation.businessType}</p></div>
+	    </div>
+
+      <div class="clear"></div>
+    </div>`;
+}
+
+function renderResults(recommendations) {
+  const results = recommendations.map((item, index) => result(item, index));
+  $(".profile-feed").html(results);
+}
