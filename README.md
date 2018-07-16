@@ -9,9 +9,6 @@
 
 1.  Find ToDos scattered around the code;
 1.  fix dates when showing recommendations
-
--
-
 1.  Css cleanup
 1.  Test?
 

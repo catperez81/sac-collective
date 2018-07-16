@@ -43,9 +43,9 @@ function followFriend(id) {
     error: function(error) {
       console.log("error", error);
     },
-    success: function(data) {
-      console.log(data);
-      alert(data);
+    success: function(friend) {
+      console.log(friend);
+      alert("You are now following " + friend.name);
     },
 
     headers: {
