@@ -1,12 +1,28 @@
 "use strict";
 const express = require("express");
 const bodyParser = require("body-parser");
-
 const { User } = require("./models");
-
 const router = express.Router();
-
 const jsonParser = bodyParser.json();
+const passport = require("passport");
+const jwtAuth = passport.authenticate("jwt", { session: false });
+
+router.post("/follow", jwtAuth, jsonParser, (req, res) => {
+  let newFollow = req.body.followId;
+  User.findById(req.user.id)
+    .then(user => {
+      var exists = user.follows.find(item => item === newFollow);
+      if (!exists) {
+        user.follows.push(newFollow);
+      }
+      return user.save();
+    })
+    .then(recommendation => res.json(recommendation.serialize()))
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: "something went wrong" });
+    });
+});
 
 // Post to register a new user
 router.post("/", jsonParser, (req, res) => {

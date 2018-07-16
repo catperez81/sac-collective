@@ -13,7 +13,7 @@
 -
 
 1.  Css cleanup
-1.  Testing
+1.  Test?
 
 ## Extra
 
@@ -23,12 +23,12 @@
 
 # SB Pending
 
-1.  Display correct recommendations on profile
+1.  Display own recommendations on profile
 1.  up.vote/downvote
 1.  Add Friends
-1.  Link reviews to creator.
 
 # SB Completed
 
 1.  Display correct info on profile
 1.  Redirect from landing page to feed if logged in
+1.  Show right user on feed
