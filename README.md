@@ -27,3 +27,4 @@
 # SB Completed
 
 1.  Display correct info on profile
+1.  Redirect from landing page to feed if logged in

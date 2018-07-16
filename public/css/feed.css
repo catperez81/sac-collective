@@ -33,6 +33,7 @@ body {
   padding-left: 20px;
   float: left;
   width: 47%;
+  box-sizing: border-box;
 }
 
 .posted-by-img {
@@ -80,7 +81,7 @@ p {
 .item-img {
   float: left;
   display: inline-block;
-  height: 200px;
+  width: 47%;
 }
 
 .item-type {
@@ -94,10 +95,18 @@ p {
 }
 
 .vote {
-  padding-top: 20px;
+  position: absolute;
+  right: 10px;
+  top: -19px;
 }
 
 /*Mobile*/
+
+@media only screen and (max-width: 940px) {
+  .feed {
+    width: 70%;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .feed {
