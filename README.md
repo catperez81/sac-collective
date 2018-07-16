@@ -7,12 +7,13 @@
 
 # Pending
 
+1.  Find ToDos scattered around the code;
+1.  fix dates when showing recommendations
+
+-
+
 1.  Css cleanup
 1.  Testing
-1.  up.vote/downvote
-
-1.  Add Friends
-1.  Link reviews to creator.
 
 ## Extra
 
@@ -23,6 +24,9 @@
 # SB Pending
 
 1.  Display correct recommendations on profile
+1.  up.vote/downvote
+1.  Add Friends
+1.  Link reviews to creator.
 
 # SB Completed
 

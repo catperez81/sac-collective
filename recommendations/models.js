@@ -17,7 +17,7 @@ const RecommendationSchema = mongoose.Schema({
     type: String,
     default: ""
   },
-  userId: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"
   },
@@ -37,6 +37,10 @@ const RecommendationSchema = mongoose.Schema({
     // TODO: YOU CAN USE THIS ID TO GET MORE STUFF FROM THE API
     type: String,
     default: ""
+  },
+  creationDate: {
+    type: Date,
+    default: Date.now()
   }
 });
 
@@ -46,11 +50,12 @@ RecommendationSchema.methods.serialize = function() {
     businessType: this.businessType || "",
     recommendation: this.recommendation || "",
     id: this._id || "",
-    userId: this.userId || "",
+    user: this.user || "",
     score: this.score || 0,
     image_url: this.image_url,
     yelp_url: this.yelp_url,
-    yelp_id: this.yelp_id
+    yelp_id: this.yelp_id,
+    creationDate: this.creationDate || Date.now()
   };
 };
 
