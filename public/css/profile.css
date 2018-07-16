@@ -1,31 +1,31 @@
 body {
- 	background: #FAFBFC;
- 	text-align: center;
- }
+  background: #fafbfc;
+  text-align: center;
+}
 
 #logo {
-	padding-left: 20px;
-	padding-top: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
   height: 16px;
   vertical-align: middle;
 }
 
 .collection-item {
- 	width: 50%;
- 	margin: 50px auto 0px auto;
- 	border: 1px solid #ECECEC;
- 	border-radius: 10px;
- 	background: white;
- 	text-align: left;
- 	position: relative;
+  width: 50%;
+  margin: 50px auto 0px auto;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  background: white;
+  text-align: left;
+  position: relative;
 }
 
 .item-details {
-	display: inline-block;
-	line-height: 1.7em;
-	padding-left: 20px;
-  float:left;
-  width:47%
+  display: inline-block;
+  line-height: 1.7em;
+  padding-left: 20px;
+  float: left;
+  width: 47%;
 }
 
 .profile-section {
@@ -33,7 +33,7 @@ body {
 }
 
 .profile-bio {
-	padding-bottom: 30px;
+  padding-bottom: 30px;
   line-height: 1.7em;
 }
 
@@ -41,27 +41,27 @@ body {
   margin-bottom: 30px;
 }
 
-.clear{
+.clear {
   clear: both;
 }
 
 p {
-	margin: 0;
+  margin: 0;
 }
 
 .item-img {
-	float: left;
-  display:inline-block;
-	height: 200px;
+  float: left;
+  display: inline-block;
+  height: 200px;
 }
 
 .item-type {
-	background: #FA4C6A;
-	color: white;
-	border-radius: 5px;
-	padding: 3px 3px;
-	width: 20%;
-	text-align: center;
+  background: #fa4c6a;
+  color: white;
+  border-radius: 5px;
+  padding: 3px 3px;
+  width: 20%;
+  text-align: center;
   margin-top: 20px;
 }
 
@@ -70,7 +70,7 @@ p {
   width: 30px;
   height: 30px;
   padding: 6px;
-  background: #F7E094;
+  background: #f7e094;
   color: #666;
   position: absolute;
   top: -15px;
@@ -87,13 +87,13 @@ p {
   box-shadow: 0 8px 6px -8px black;
   padding: 0px;
   background-color: white;
-  margin: 8% 10% 20% 10%; 
+  margin: 8% 10% 20% 10%;
   border-radius: 10px;
 }
 
 fieldset {
   border: 0px;
-  font-size: 0;  
+  font-size: 0;
 }
 
 label {
@@ -124,19 +124,18 @@ input {
 
 /*Mobile*/
 
-@media only screen and (max-width: 600px)  {
-
+@media only screen and (max-width: 600px) {
   .profile-bio {
     padding: 0px 10px 20px 10px;
   }
 
   .item-img {
-  	width: 100%;
-    height:auto;
+    width: 100%;
+    height: auto;
   }
 
   .item-details {
-    width:90%;
+    width: 90%;
     padding-bottom: 20px;
   }
 
@@ -147,5 +146,4 @@ input {
   .collection-item {
     width: 70%;
   }
-
- }
+}

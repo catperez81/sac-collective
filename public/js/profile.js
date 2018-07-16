@@ -13,7 +13,7 @@
 //        $("~ .vote-count", this).text(count);
 //     } else {
 //       var count = count - 1;
-//       $("~ .vote-count", this).text(count);     
+//       $("~ .vote-count", this).text(count);
 //     	}
 // 		});
 // }

@@ -6,10 +6,10 @@ $(function() {
 
 function upvoteListener() {
   $("#up-arrow").click(function() {
-    console.log('testing');
+    console.log("testing");
     var counter = 0;
     counter++;
-      $(".vote-count").text(counter);
+    $(".vote-count").text(counter);
   });
 }
 
@@ -19,9 +19,9 @@ $(function() {
 
 function downvoteListener() {
   $("#down-arrow").click(function() {
-    console.log('testing');
+    console.log("testing");
     var counter = 0;
     counter--;
-      $(".vote-count").text(counter);
+    $(".vote-count").text(counter);
   });
 }

@@ -42,7 +42,7 @@ function result(friend, index) {
     	      <p class="friend-email">${friend.email}</p>
             <div class="follow-button">
               <button class="btn btn-default follow-friend">Follow</button>
-            </div>        	
+            </div>
           </div>
         </div>`;
 }

@@ -1,78 +1,77 @@
 body {
- 	background: #FAFBFC;
- 	text-align: center;
- 	margin-top: 100px;
- }
+  background: #fafbfc;
+  text-align: center;
+  margin-top: 100px;
+}
 
 p {
-	font-size: 18px;
-	font-family: 'Muli', sans-serif;
-	padding-bottom: 30px;
-	line-height: 1.7em;
+  font-size: 18px;
+  font-family: "Muli", sans-serif;
+  padding-bottom: 30px;
+  line-height: 1.7em;
 }
 
 h2 {
-	font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
 }
 
 .sky-asset {
-	padding-bottom: 50px;
-	width: 50%;
+  padding-bottom: 50px;
+  width: 50%;
 }
 
 .cta-row {
-	margin-top: 30px;
-	margin-bottom: 100px;
+  margin-top: 30px;
+  margin-bottom: 100px;
 }
 
 .value-props {
-	background: white;
-	border-top: 1px solid #ECECEC;
-	text-align: left;
-	padding: 50px 0px 50px 50px;
-	display: inline-block;
+  background: white;
+  border-top: 1px solid #ececec;
+  text-align: left;
+  padding: 50px 0px 50px 50px;
+  display: inline-block;
 }
 
 .value-content {
-	width: 25%;
-	margin-right: 5%;
-	text-align: left;
-	float: left;
-	display: inline-block;
+  width: 25%;
+  margin-right: 5%;
+  text-align: left;
+  float: left;
+  display: inline-block;
 }
 
 .value-img {
-	display: inline-block;
-	width: 80%;
-    height: auto;
+  display: inline-block;
+  width: 80%;
+  height: auto;
 }
 
 .value-img-3 {
-	width: 60%;
-	height: auto;
+  width: 60%;
+  height: auto;
 }
 
 .footer {
-	background: black;
-	padding: 30px 0px 30px 0px;
-	color: white;
+  background: black;
+  padding: 30px 0px 30px 0px;
+  color: white;
 }
 
 /*Mobile*/
 
 @media only screen and (max-width: 600px) {
- 
   #logo {
-  	width: 80%;
-    height:auto;
-  } 
+    width: 80%;
+    height: auto;
+  }
 
   .sky-asset {
-  	width: 90%;
+    width: 90%;
   }
 
   .value-content {
-  	width: 80%;
-  	padding-bottom: 50px;
+    width: 80%;
+    padding-bottom: 50px;
   }
-} 
+}
