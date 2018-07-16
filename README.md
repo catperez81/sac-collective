@@ -17,3 +17,13 @@
 ## Extra
 
 1.  Images
+
+---
+
+# SB Pending
+
+1.  Display correct recommendations on profile
+
+# SB Completed
+
+1.  Display correct info on profile

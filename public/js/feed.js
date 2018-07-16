@@ -1,5 +1,3 @@
-console.log("feed page");
-
 const settings = {
   url: "/api/recommendations",
   dataType: "json",
@@ -16,6 +14,7 @@ const settings = {
   }
 };
 
+console.log(authToken);
 $.ajax(settings);
 
 function result(recommendation, index) {

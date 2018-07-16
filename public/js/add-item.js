@@ -1,4 +1,3 @@
-console.log("add item page");
 const YELP_API_KEY =
   "62SPynvgdMjqoIbpDs0cmVmGDIwTEe2NwCzgKJ8YGjOxJO5IqSYBULIq0cwNuv0dVxQvY5P3BqLsxgxjOhlOy9S3Bysr3OyKpkJ_Rv7PFEwnkSRHkKUficpMvXtDW3Yx";
 $(function() {
@@ -29,9 +28,9 @@ function setFormListener() {
         state.businesses = businesses;
         renderResults(state.businesses);
       },
-      // headers: {
-      //   Authorization: "Bearer " + YELP_API_KEY
-      // },
+      headers: {
+        Authorization: "Bearer " + authToken
+      },
       type: "GET",
       contentType: "application/json",
       dataType: "json"
@@ -61,9 +60,9 @@ function setFormListener() {
         console.log("created");
         location.replace("/feed.html");
       },
-      // headers: {
-      //   'Authorization': 'Bearer ' + authToken
-      // },
+      headers: {
+        Authorization: "Bearer " + authToken
+      },
       type: "POST",
       contentType: "application/json",
       dataType: "json"
