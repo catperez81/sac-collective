@@ -34,7 +34,7 @@ const RecommendationSchema = mongoose.Schema({
     default: ""
   },
   yelp_id: {
-    // TODO: YOU CAN USE THIS ID TO GET MORE STUFF FROM THE API
+    // FUTURE TODO: YOU CAN USE THIS ID TO GET MORE STUFF FROM THE API
     type: String,
     default: ""
   },

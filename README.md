@@ -10,22 +10,23 @@
 1.  Find ToDos scattered around the code;
 1.  fix dates when showing recommendations
 1.  Css cleanup
-1.  Test?
+1.  Test clicking everything
 
-## Extra
-
-1.  Images
-
----
-
-# SB Pending
+# Pending 2.0
 
 1.  Display own recommendations on profile
-1.  up.vote/downvote
-1.  Add Friends
+1.  upvote/downvote
+1.  Tests!
 
 # SB Completed
 
 1.  Display correct info on profile
 1.  Redirect from landing page to feed if logged in
 1.  Show right user on feed
+1.  Add Friends
+
+---
+
+## Future Addons
+
+1.  Images
