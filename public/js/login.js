@@ -24,7 +24,7 @@ function setFormListener() {
       success: function(data) {
         console.log(data);
         localStorage.setItem("token", data.authToken);
-        location.replace("/profile.html");
+        location.replace("/feed.html");
       },
       // headers: {
       //   'Authorization': 'Bearer ' + authToken
