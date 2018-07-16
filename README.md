@@ -9,7 +9,6 @@
 
 1.  Feed add follow friends or add items when no suggestions
 1.  fix dates when showing recommendations
-1.  Link to do to feed from profile
 1.  Find ToDos scattered around the code;
 1.  Css cleanup
 1.  Test clicking everything
