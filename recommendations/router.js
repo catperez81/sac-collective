@@ -9,6 +9,7 @@ const jwtAuth = passport.authenticate("jwt", { session: false });
 
 router.get("/", jwtAuth, (req, res) => {
   Recommendation.find()
+    .populate("user")
     .then(recommendations => {
       res.json(
         recommendations.map(recommendation => recommendation.serialize())
@@ -20,8 +21,9 @@ router.get("/", jwtAuth, (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", jwtAuth, (req, res) => {
   Recommendation.findById(req.params.id)
+    .populate("user")
     .then(recommendation => res.json(recommendation.serialize()))
     .catch(err => {
       console.error(err);
@@ -29,7 +31,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", jsonParser, (req, res) => {
+router.post("/", jwtAuth, jsonParser, (req, res) => {
   //change to actual fields//
   const requiredFields = [
     "businessName",
@@ -54,7 +56,8 @@ router.post("/", jsonParser, (req, res) => {
     recommendation: req.body.recommendation,
     image_url: req.body.image_url,
     yelp_id: req.body.yelp_id,
-    yelp_url: req.body.yelp_url
+    yelp_url: req.body.yelp_url,
+    user: req.user.id
   })
     .then(recommendation => res.status(201).json(recommendation.serialize()))
     .catch(err => {

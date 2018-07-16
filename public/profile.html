@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>The Sacramento Collective</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/profile.css">
-    <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
@@ -23,32 +24,23 @@
 
     <div class="row profile-section">
       <div class="profile-img">
-        <img src="images/cat-profile.png" height="160px" border="0" alt="profile-image">
+        <!-- TODO: FIX ROUNDED CORNERS -->
+        <img class="profile-image" src="" height="160px" border="0" alt="profile-image">
       </div>
-      <h1 class="name">Cat Perez</h1>
-      <p class="profile-bio">Born & raised in NJ. 10 years in San Francisco. Cofounder in Health tech newly settling in Sacramento.
-      <p class="edit-link"><a href="#ex1" rel="modal:open">Edit Profile</a></p>
+      <h1 class="profile-name">Name here</h1>
+      <p class="profile-bio">bio</p>
+          <!-- TODO: EDIT PROFILE FUNCTIONALITY? OR KEEP THIS AS A FUTURE OPTION -->
+      <!-- <p class="edit-link"><a href="#ex1" rel="modal:open">Edit Profile</a></p> -->
       <a href="/add-item.html"><button class="btn btn-default main-button" type="submit">Add to my collection</button></a>
     </div>
 
     <div class="row">
-      <!--items added to collection show up here - hard coding for now -->
-      <div class="collection-item">
-        <div class="vote-badge">
-          <img src="images/upvote-arrow.png" height="12px" id="arrow" border="0" alt="upvote arrow"><span class="vote-count">14</span>
-        </div>
 
-       <img src="images/placeholder-img.png" class="item-img" border="0" alt="profile-image">
-        <div class="item-details">
-          <h3>Insight Coffee</h3>
-          <p>566 Pavilions Ln, Sacramento, CA 95825, (916) 905-7904</p>
-          <div class="item-type">
-            <p>Coffee</p>
-          </div>
-        </div>
+      <h1 >My recommended places</h1>
 
-        <div class="clear"></div>
-      </div>
+
+      <h1 >LOGIC TO GET PLACES HERE</h1>
+
     </div>
 
       <div id="ex1" class="modal">
@@ -104,7 +96,7 @@
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
       <script type="text/javascript" src="/js/protected-page.js"> </script>
       <script type="text/javascript" src="/js/main.js"> </script>
       <script type="text/javascript" src="/js/profile.js"> </script>

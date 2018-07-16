@@ -1,8 +1,24 @@
 // console.log("profile page");
 
-// $(function() {
-//   setVoteListener();
-// });
+$(function() {
+  showProfileData();
+});
+
+function showProfileData() {
+  var user = parseJwt(authToken).user;
+  console.log(user);
+
+  $(".profile-image").attr("src", user.image);
+  $(".profile-bio").text(user.bio);
+  $(".profile-name").text(user.name);
+  console.log($(".profile-bio"));
+}
+
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace("-", "+").replace("_", "/");
+  return JSON.parse(window.atob(base64));
+}
 
 // function setVoteListener() {
 //   $(".vote-badge").click(function() {

@@ -22,13 +22,11 @@ const UserSchema = mongoose.Schema({
   image: {
     type: String,
     required: false
+  },
+  follows: {
+    type: Array,
+    default: []
   }
-  // items: {
-  //   type: Array
-  // },
-  // follows: {
-  //   type: Array
-  // }
 });
 
 UserSchema.methods.serialize = function() {
@@ -36,7 +34,9 @@ UserSchema.methods.serialize = function() {
     name: this.name || "",
     email: this.email || "",
     bio: this.bio || "",
-    image: this.image || ""
+    image: this.image || "",
+    id: this._id || "",
+    follows: this.follows || []
   };
 };
 

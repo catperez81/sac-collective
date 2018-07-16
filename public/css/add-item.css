@@ -22,7 +22,7 @@ body {
   box-shadow: 0 8px 6px -8px black;
   padding: 40px;
   background-color: white;
-  margin: 0% 30% 5% 30%;
+  margin: 0% 25% 5% 25%;
   border: 1px solid #ececec;
   border-radius: 10px;
   display: inline-block;
@@ -128,10 +128,11 @@ input {
 
 .results {
   display: inline-block;
+  width: 50%;
 }
 
 .business-img {
-  width: 200px;
+  width: 120px;
   clip-path: circle(50px);
 }
 
@@ -174,7 +175,17 @@ input {
   color: black;
   text-align: center;
 }
+.data {
+  display: inline-block;
+}
+.business-img {
+  display: inline-block;
 
+  vertical-align: top;
+}
+.business-title {
+  margin-top: 0px;
+}
 /*Mobile*/
 
 @media only screen and (max-width: 600px) {
