@@ -11,6 +11,11 @@ p {
   line-height: 1.7em;
 }
 
+.login-link {
+  display: inherit;
+  padding-top: 40px;
+}
+
 h2 {
   font-family: "Muli", sans-serif;
 }

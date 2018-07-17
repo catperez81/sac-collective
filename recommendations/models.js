@@ -4,6 +4,21 @@ const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
 
+function timeStamp() {
+  var now = new Date();
+  var date = [ now.getMonth() + 1, now.getDate(), now.getFullYear() ];
+  var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
+  var suffix = ( time[0] < 12 ) ? "AM" : "PM";
+  time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
+  time[0] = time[0] || 12;
+  for ( var i = 1; i < 3; i++ ) {
+    if ( time[i] < 10 ) {
+      time[i] = "0" + time[i];
+    }
+  }
+  return date.join("/") + " " + time.join(":") + " " + suffix;
+};
+
 const RecommendationSchema = mongoose.Schema({
   businessName: {
     type: String,
@@ -40,7 +55,7 @@ const RecommendationSchema = mongoose.Schema({
   },
   creationDate: {
     type: Date,
-    default: Date.now()
+    default: timeStamp()
   }
 });
 
@@ -55,7 +70,7 @@ RecommendationSchema.methods.serialize = function() {
     image_url: this.image_url,
     yelp_url: this.yelp_url,
     yelp_id: this.yelp_id,
-    creationDate: this.creationDate || Date.now()
+    creationDate: this.creationDate || timeStamp()
   };
 };
 

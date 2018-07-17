@@ -39,6 +39,7 @@ body {
 .posted-by-img {
   position: relative;
   top: 10px;
+  border-radius: 10%;
 }
 
 h2 {
@@ -81,7 +82,8 @@ p {
 .item-img {
   float: left;
   display: inline-block;
-  width: 47%;
+  height: 200px;
+  width: auto;
 }
 
 .item-type {

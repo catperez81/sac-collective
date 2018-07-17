@@ -28,6 +28,10 @@ body {
   width: 47%;
 }
 
+.profile-image {
+  border-radius: 5%;
+}
+
 .profile-section {
   padding-top: 10%;
 }
@@ -53,6 +57,7 @@ p {
   float: left;
   display: inline-block;
   height: 200px;
+  width: auto;
 }
 
 .item-type {
