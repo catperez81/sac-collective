@@ -7,23 +7,23 @@
 
 # Pending
 
-1.  Feed add follow friends or add items when no suggestions
-1.  Find ToDos scattered around the code;
-1.  Css cleanup
-1.  Test clicking everything
-
+1.  [CSS] Image size -> make it consistent across recommendations. 
+1.  [CSS] Clean up find friends
+1.  [CSS] Upvote/Downvote. move it. 
+1.  [CSS] Food/coffee/Shopping tags, different colors. 
+1.  [CSS] Additem page. Use the same format as results. 
+1.  [CSS] Mobile Check!!
+1.  [JS] Feed add "follow friends or add items" if there are no recommendations (meaning length of the results is 0)
+ 
 # Pending 2.0
 
-1.  Display own recommendations on profile
-1.  upvote/downvote
-1.  Tests!
+1.  [API] Display own recommendations on profile
+1.  [API+JS] upvote/downvote
+1.  Tests `npm test`
+1.  [API+JS] Feed, only show recommendations from people you are following + yourself.
 
-# SB Completed
-
-1.  Display correct info on profile
-1.  Redirect from landing page to feed if logged in
-1.  Show right user on feed
-1.  Add Friends
+1. [JS] Highlight friends that are already followed. 
+1. [JS] Don't display yourself in the follow friends.
 
 ---
 
