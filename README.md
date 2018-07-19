@@ -1,8 +1,6 @@
 # sac-collective
 
-###To run dev server
-
-1.  `source .env`
+To run dev server:
 1.  `nodemon`
 
 # Pending
