@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 
 function timeStamp(now) {
  var date = [ now.getMonth() + 1, now.getDate(), now.getFullYear() ];
- var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
+ var time = [ now.getHours(), now.getMinutes() ];
  var suffix = ( time[0] < 12 ) ? "AM" : "PM";
  time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
  time[0] = time[0] || 12;
@@ -54,7 +54,7 @@ const RecommendationSchema = mongoose.Schema({
   },
   creationDate: {
     type: Date,
-    default: timeStamp(this.creationDate) || timeStamp(new Date())
+    default: new Date()
   }
 });
 
@@ -69,7 +69,7 @@ RecommendationSchema.methods.serialize = function() {
     image_url: this.image_url,
     yelp_url: this.yelp_url,
     yelp_id: this.yelp_id,
-    creationDate: this.creationDate || timeStamp()
+    creationDate: timeStamp(this.creationDate)
   };
 };
 

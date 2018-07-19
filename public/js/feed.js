@@ -26,7 +26,6 @@ function result(recommendation, index) {
     	<div class="friend-details">
       	<h3 class="friend-name">${recommendation.user.name}</h3>
 
-         <!--TODO!! DISPLAY THIS NICELY-->
       	<p class="time-stamp">${recommendation.creationDate}</p>
     	</div>
 
