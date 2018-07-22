@@ -132,4 +132,10 @@ p {
   .collection-item {
     width: 70%;
   }
+
+  .vote {
+    right: 25px;
+    top: 260px;
+  }
+
 }
