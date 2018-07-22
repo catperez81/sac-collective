@@ -7,7 +7,7 @@ To run dev server:
 
 1.  [CSS] Image size -> make it consistent across recommendations. 
 1.  [CSS] Clean up find friends (Done)
-1.  [CSS] Upvote/Downvote. move it. 
+1.  [CSS] Upvote/Downvote. move it. (Done)
 1.  [CSS] Food/coffee/Shopping tags, different colors. 
 1.  [CSS] Additem page. Use the same format as results. 
 1.  [CSS] Mobile Check!!
