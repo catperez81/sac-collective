@@ -91,7 +91,8 @@ h1 {
   .add-item,
   .find-friends,
   .logout,
-  .profile {
+  .profile,
+  .feed-link {
     display: none;
   }
 }
