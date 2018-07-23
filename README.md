@@ -11,8 +11,9 @@ To run dev server:
 1.  [CSS] Food/coffee/Shopping tags, different colors. <strong>(Done)</strong>
 1.  [CSS] Additem page. Use the same format as results. <strong>(Done)</strong>
 1.  [CSS] Additem page. Update ordering / language for additional recommendation questions. <strong>(Done)</strong>
-1.  [CSS] Mobile Check!!
 1.  [JS] Feed add "follow friends or add items" if there are no recommendations (meaning length of the results is 0) <strong>(Done)</strong>
+1.  [CSS] Mobile Check!! <strong>WIP</strong>
+1.  [CSS] Hamburger menu on click (mobile)
 
  
 # Pending 2.0
