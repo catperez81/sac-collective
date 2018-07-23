@@ -60,4 +60,8 @@ function result(recommendation, index) {
 function renderResults(recommendations) {
   const results = recommendations.map((item, index) => result(item, index));
   $(".recommendations").html(results);
+  if (results.length === 0) {
+    $(".recommendations").html(`Sorry, there are no items recommended yet. <a href="/add-item.html">Add an item</a>
+      or <a href="/find-friends.html">Follow friends</a>`);
+  }
 }
