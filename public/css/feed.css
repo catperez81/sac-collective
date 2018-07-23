@@ -14,7 +14,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
-  width: 40%;
+  width: 70%;
 }
 
 .collection-item {
@@ -124,11 +124,16 @@ p {
 
 @media only screen and (max-width: 940px) {
   .feed {
-    width: 70%;
+    width: 80%;
   }
 }
 
 @media only screen and (max-width: 600px) {
+
+  h3 {
+    margin-bottom: 0;
+  }
+
   .feed {
     width: 100%;
     margin-left: 15%;
@@ -138,6 +143,7 @@ p {
     width: 100%;
     height: auto;
   }
+  
   .item-details {
     width: 90%;
     padding-bottom: 20px;
@@ -152,8 +158,32 @@ p {
   }
 
   .vote {
-    right: 25px;
-    top: 260px;
+    right: 16px;
+    top: 90px;
+  }
+
+    .follow-button {
+    float: none;
+    position: inherit;
+    padding-top: 20px;
+  }
+
+  .hamburger-dropdown {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-block;
+    float: right;
+    padding-right: 20px;
+  }
+
+  .add-item,
+  .find-friends,
+  .logout,
+  .profile,
+  .feed-link {
+    display: none;
   }
 
 }

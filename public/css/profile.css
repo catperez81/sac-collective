@@ -165,4 +165,10 @@ input {
   .collection-item {
     width: 70%;
   }
+
+  .vote {
+    right: 16px;
+    top: 295px;
+  }
+
 }
