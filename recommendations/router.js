@@ -10,6 +10,7 @@ const jwtAuth = passport.authenticate("jwt", { session: false });
 router.get("/", jwtAuth, (req, res) => {
   Recommendation.find()
     .populate("user")
+    .sort({ creationDate: -1 })
     .then(recommendations => {
       res.json(
         recommendations.map(recommendation => recommendation.serialize())
