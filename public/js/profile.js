@@ -21,7 +21,7 @@ function parseJwt(token) {
 }
 
 const settings = {
-  url: "/api/recommendations",
+  url: "/api/recommendations/own",
   dataType: "json",
   type: "GET",
   success: function(response) {

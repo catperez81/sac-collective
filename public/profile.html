@@ -15,12 +15,22 @@
       <nav role="navigation">
         <a href="/feed.html"><img src="images/sac-collective-logo.png" id="logo" border="0" alt="sac-collective logo">
         <a href="/add-item.html"><button class="btn btn-default add-item">Add item</button></a>
-        <a href="/find-friends.html"><button class="btn btn-default find-friends">Find friends</button></a>
+        <a href="/find-friends.html"><button class="btn btn-default find-friends">Follow friends</button></a>
         <a href="/profile.html" class="profile">Profile</a>
         <a href="/feed.html" class="feed-link">Feed</a>
         <a href="" class="logout">Log out</a>
         <a href="#"><img src="images/hamburger.png" class="hamburger" display="none"></a>
       </nav>
+    </div>
+
+    <div class="hamburger-dropdown">
+      <div class="dropdown-content">
+        <a href="/add-item.html">Add item</a>
+        <a href="/find-friends.html">Find friends</a>
+        <a href="/profile.html">Profile</a>
+        <a href="/feed.html">Feed</a>
+        <a href="">Log out</a>
+      </div>
     </div>
 
     <div class="row profile-section">
@@ -30,63 +40,10 @@
       </div>
       <h1 class="profile-name">Name here</h1>
       <p class="profile-bio">bio</p>
-          <!-- TODO: EDIT PROFILE FUNCTIONALITY? OR KEEP THIS AS A FUTURE OPTION -->
-      <!-- <p class="edit-link"><a href="#ex1" rel="modal:open">Edit Profile</a></p> -->
       <a href="/add-item.html"><button class="btn btn-default main-button" type="submit">Add to my collection</button></a>
     </div>
 
-    <div class="profile-feed"></div>
-
-      <div id="ex1" class="modal">
-        <div class="row">
-          <div class="form">
-            <div class="signup-header">
-              <h1>Edit your profile</h1>
-            </div>
-            <form id="signup-form">
-                <fieldset>
-                  <div class="field">
-                    <label>Email address</label><br>
-                    <input type="text" name="email" class="email" required>
-                  </div>
-                  <div class="field">
-                    <label>Password</label>
-                    <input type="text" name="password" class="password" required>
-                  </div>
-                  <div class="field">
-                    <label>Profile image url</label>
-                    <input type="text" name="image" class="image">
-                  </div>
-                  <div class="field">
-                    <label>Bio</label>
-                    <input type="text" name="bio" class="bio">
-                  </div>
-                </fieldset>
-            </form>
-          </div>
-        </div>
-        <a href="" rel="modal:save">Save</a>
-        <a href="" rel="modal:close">Close</a>
-      </div>
-
-      <div id="ex1" class="modal">
-        <div class="row">
-          <div class="form">
-            <div class="signup-header">
-              <h1>Find friends</h1>
-            </div>
-            <form id="signup-form">
-              <fieldset>
-                <div class="field">
-                  <label>Find by name or email</label><br>
-                  <input type="text" name="email" class="email" required>
-                </div>
-            </form>
-          </div>
-        </div>
-        <a href="" rel="modal:save">Save</a>
-        <a href="" rel="modal:close">Close</a>
-      </div>
+    <div class="profile-feed"></div> 
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>

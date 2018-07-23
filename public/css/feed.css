@@ -84,7 +84,6 @@ p {
   display: inline-block;
   height: 200px;
   width: 30%;
-  background-image: ;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -141,7 +140,6 @@ p {
 
   .item-img {
     width: 100%;
-    height: auto;
   }
   
   .item-details {
@@ -159,7 +157,7 @@ p {
 
   .vote {
     right: 16px;
-    top: 90px;
+    top: 286px;
   }
 
     .follow-button {
