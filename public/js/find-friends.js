@@ -2,12 +2,13 @@ console.log("find friends page");
 
 $(function() {
   setFormListener();
-  getUsers();
+  getUsers("follow");
+  getUsers("following");
 });
 
-function getUsers(searchTerm) {
+function getUsers(type) {
   $.ajax({
-    url: `/api/users/`,
+    url: `/api/users/${type}`,
     // data: JSON.stringify({
     //   query: $(".search").val()
     // }),
@@ -16,7 +17,7 @@ function getUsers(searchTerm) {
     },
     success: function(data) {
       console.log(data);
-      renderResults(data);
+      renderResults(data, type);
     },
 
     headers: {
@@ -46,6 +47,8 @@ function followFriend(id) {
     success: function(friend) {
       console.log(friend);
       alert("You are now following " + friend.name);
+      getUsers("follow");
+      getUsers("following");
     },
 
     headers: {
@@ -57,26 +60,34 @@ function followFriend(id) {
   });
 }
 
-$("#friend-results").on("click", ".follow-friend", function() {
+$("#follow").on("click", ".follow-friend", function() {
   var id = $(this).attr("data-id");
   followFriend(id);
 });
 
-function result(friend, index) {
+function result(friend, type) {
+  let followButton = "";
+  if (type === "follow") {
+    followButton = `<button id=${
+      friend.id
+    } class="btn btn-default follow-friend" data-id="${
+      friend.id
+    }">Follow</button>`;
+  }
+
   return `
   <div class="friend-square">
     <div class="friend-img" style="background-image:url(${
       friend.image
     })"> </div>
     <p class="friend-name">${friend.name}</p>
-    <button id=${friend.id} class="btn btn-default follow-friend" data-id="${
-    friend.id
-  }">Follow</button>
+    ${followButton}
   </div>`;
 }
 
-function renderResults(friends) {
-  const results = friends.map((item, index) => result(item, index));
-  $("#friend-results").show();
-  $("#friend-results").html(results);
+function renderResults(friends, type) {
+  const results = friends.map(item => result(item, type));
+  $(`#${type}`).show();
+  $(`#${type}`).html(results);
+  $(`#${type}`).append(`<div class="clear"></div>`);
 }

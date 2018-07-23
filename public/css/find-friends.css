@@ -199,6 +199,9 @@ input {
   font-size: 22px;
 }
 
+.clear {
+  clear: both;
+}
 /*Mobile*/
 
 @media only screen and (max-width: 600px) {
