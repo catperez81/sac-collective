@@ -21,6 +21,19 @@ router.get("/", jwtAuth, (req, res) => {
     });
 });
 
+router.get("/own", jwtAuth, (req, res) => {
+  Recommendation.find({ user: req.user.id })
+    .then(recommendations => {
+      res.json(
+        recommendations.map(recommendation => recommendation.serialize())
+      );
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: "something went wrong" });
+    });
+});
+
 router.get("/:id", jwtAuth, (req, res) => {
   Recommendation.findById(req.params.id)
     .populate("user")

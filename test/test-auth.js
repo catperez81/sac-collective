@@ -16,10 +16,9 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe("Auth endpoints", function() {
-  const username = "exampleUser";
+  const email = "email@address.com";
   const password = "examplePass";
-  const firstName = "Example";
-  const lastName = "User";
+  const name = "exampleUser";
 
   before(function() {
     return runServer(TEST_DATABASE_URL);
@@ -32,10 +31,9 @@ describe("Auth endpoints", function() {
   beforeEach(function() {
     return User.hashPassword(password).then(password =>
       User.create({
-        username,
+        email,
         password,
-        firstName,
-        lastName
+      
       })
     );
   });
@@ -59,11 +57,11 @@ describe("Auth endpoints", function() {
           expect(res).to.have.status(400);
         });
     });
-    it("Should reject requests with incorrect usernames", function() {
+    it("Should reject requests with incorrect emails", function() {
       return chai
         .request(app)
         .post("/api/auth/login")
-        .send({ username: "wrongUsername", password })
+        .send({ email: "wrongEmail", password })
         .then(() => expect.fail(null, null, "Request should not succeed"))
         .catch(err => {
           if (err instanceof chai.AssertionError) {
@@ -78,7 +76,7 @@ describe("Auth endpoints", function() {
       return chai
         .request(app)
         .post("/api/auth/login")
-        .send({ username, password: "wrongPassword" })
+        .send({ email, password: "wrongPassword" })
         .then(() => expect.fail(null, null, "Request should not succeed"))
         .catch(err => {
           if (err instanceof chai.AssertionError) {
@@ -93,7 +91,7 @@ describe("Auth endpoints", function() {
       return chai
         .request(app)
         .post("/api/auth/login")
-        .send({ username, password })
+        .send({ email, password })
         .then(res => {
           expect(res).to.have.status(200);
           expect(res.body).to.be.an("object");
@@ -103,9 +101,12 @@ describe("Auth endpoints", function() {
             algorithm: ["HS256"]
           });
           expect(payload.user).to.deep.equal({
-            username,
-            firstName,
-            lastName
+            bio: "",
+            email: email,
+            follows: [],
+            id: res.value.id,
+            image: "",
+            name: name 
           });
         });
     });
@@ -129,9 +130,8 @@ describe("Auth endpoints", function() {
     it("Should reject requests with an invalid token", function() {
       const token = jwt.sign(
         {
-          username,
-          firstName,
-          lastName
+          email,
+          name
         },
         "wrongSecret",
         {
@@ -159,8 +159,7 @@ describe("Auth endpoints", function() {
     //     {
     //       user: {
     //         username,
-    //         firstName,
-    //         lastName
+    //         name,
     //       },
     //     },
     //     JWT_SECRET,
@@ -191,15 +190,14 @@ describe("Auth endpoints", function() {
       const token = jwt.sign(
         {
           user: {
-            username,
-            firstName,
-            lastName
+            email,
+            name
           }
         },
         JWT_SECRET,
         {
           algorithm: "HS256",
-          subject: username,
+          subject: email,
           expiresIn: "7d"
         }
       );
@@ -218,9 +216,8 @@ describe("Auth endpoints", function() {
             algorithm: ["HS256"]
           });
           expect(payload.user).to.deep.equal({
-            username,
-            firstName,
-            lastName
+            email,
+            name
           });
           expect(payload.exp).to.be.at.least(decoded.exp);
         });
