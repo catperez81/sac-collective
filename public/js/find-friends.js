@@ -16,7 +16,6 @@ function getUsers(type) {
       console.log("error", error);
     },
     success: function(data) {
-      console.log(data);
       renderResults(data, type);
     },
 
@@ -36,7 +35,6 @@ function setFormListener() {
 }
 
 function followUnfollowFriend(id, type) {
-  console.log(id, type);
   $.ajax({
     url: `/api/users/follow`,
     data: JSON.stringify({
@@ -47,8 +45,6 @@ function followUnfollowFriend(id, type) {
       console.log("error", error);
     },
     success: function(friend) {
-      console.log(friend);
-      alert("You are now following " + friend.name);
       getUsers("follow");
       getUsers("following");
     },
