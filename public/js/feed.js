@@ -31,11 +31,13 @@ function result(recommendation, index) {
 
     </div>
 		<div class="collection-item">
-      <img src="${
-        recommendation.image_url
-          ? recommendation.image_url
-          : "images/placeholder-img.png"
-      }" class="item-img" border="0" alt="profile-image">
+      <div style="background-image: url(${
+          recommendation.image_url
+            ? recommendation.image_url
+            : "images/placeholder-img.png"
+        });" class="item-img" border="0" alt="profile-image">
+      </div>
+      
       <div class="item-details">
 
         <a href="${recommendation.yelp_url}">
@@ -45,6 +47,7 @@ function result(recommendation, index) {
         <p>${recommendation.recommendation}</p>
         <div class="item-type ${recommendation.businessType}"><p>${recommendation.businessType}</p></div>
       </div>
+      
       <div class="vote">
         <img src="images/upvote-button.png" height="36px" id="up-arrow" border="0" alt="upvote arrow">
         <span class="vote-count">0</span>

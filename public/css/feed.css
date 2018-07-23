@@ -83,7 +83,11 @@ p {
   float: left;
   display: inline-block;
   height: 200px;
-  width: auto;
+  width: 30%;
+  background-image: ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .item-type {
