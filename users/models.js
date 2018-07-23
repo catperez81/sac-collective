@@ -35,8 +35,7 @@ UserSchema.methods.serialize = function() {
     email: this.email || "",
     bio: this.bio || "",
     image: this.image || "",
-    id: this._id || "",
-    follows: this.follows || []
+    id: this._id || ""
   };
 };
 

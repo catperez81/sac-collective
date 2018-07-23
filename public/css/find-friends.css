@@ -100,11 +100,13 @@ p {
   padding-top: 12px;
   font-size: 22px;
 }
+.clear {
+  clear: both;
+}
 
 /*Mobile*/
 
 @media only screen and (max-width: 700px) {
-  
   body {
     padding-bottom: 0px;
   }
@@ -162,5 +164,3 @@ p {
     display: none;
   }
 }
-
-

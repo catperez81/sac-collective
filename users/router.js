@@ -7,6 +7,41 @@ const jsonParser = bodyParser.json();
 const passport = require("passport");
 const jwtAuth = passport.authenticate("jwt", { session: false });
 
+router.get("/follow", jwtAuth, (req, res) => {
+  var loggedUser = {};
+  return User.findById(req.user.id)
+    .then(_loggedUser => {
+      loggedUser = _loggedUser;
+      return User.find();
+    })
+    .then(users => {
+      let filteredUsers = users
+        .map(user => user.serialize())
+        .filter(user => user.id != req.user.id)
+        .filter(user => loggedUser.follows.indexOf(user.id) < 0);
+      return res.json(filteredUsers);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ message: "Internal server error" });
+    });
+});
+
+router.get("/following", jwtAuth, (req, res) => {
+  return User.findById(req.user.id)
+    .populate("follows")
+    .then(loggedUser => {
+      let following = loggedUser.follows
+        .map(user => user.serialize())
+        .filter(user => user.id != req.user.id);
+      return res.json(following);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ message: "Internal server error" });
+    });
+});
+
 router.post("/follow", jwtAuth, jsonParser, (req, res) => {
   let newFollow = req.body.followId;
   User.findById(req.user.id)
@@ -17,6 +52,7 @@ router.post("/follow", jwtAuth, jsonParser, (req, res) => {
       }
       return user.save();
     })
+    .then(user => User.findById(newFollow))
     .then(recommendation => res.json(recommendation.serialize()))
     .catch(err => {
       console.error(err);
