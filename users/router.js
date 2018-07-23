@@ -47,8 +47,11 @@ router.post("/follow", jwtAuth, jsonParser, (req, res) => {
   User.findById(req.user.id)
     .then(user => {
       var exists = user.follows.find(item => item === newFollow);
-      if (!exists) {
+      if (!exists && req.body.type === "follow") {
         user.follows.push(newFollow);
+      } else if (exists && req.body.type === "unfollow") {
+        let index = user.follows.indexOf(newFollow);
+        user.follows.splice(index, 1);
       }
       return user.save();
     })

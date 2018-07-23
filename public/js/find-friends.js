@@ -16,7 +16,6 @@ function getUsers(type) {
       console.log("error", error);
     },
     success: function(data) {
-      console.log(data);
       renderResults(data, type);
     },
 
@@ -35,18 +34,17 @@ function setFormListener() {
   });
 }
 
-function followFriend(id) {
+function followUnfollowFriend(id, type) {
   $.ajax({
     url: `/api/users/follow`,
     data: JSON.stringify({
-      followId: id
+      followId: id,
+      type
     }),
     error: function(error) {
       console.log("error", error);
     },
     success: function(friend) {
-      console.log(friend);
-      alert("You are now following " + friend.name);
       getUsers("follow");
       getUsers("following");
     },
@@ -60,20 +58,14 @@ function followFriend(id) {
   });
 }
 
-$("#follow").on("click", ".follow-friend", function() {
+$(".user-results").on("click", ".follow-unfollow-button", function() {
   var id = $(this).attr("data-id");
-  followFriend(id);
+  var type = $(this).attr("data-type");
+  followUnfollowFriend(id, type);
 });
 
 function result(friend, type) {
-  let followButton = "";
-  if (type === "follow") {
-    followButton = `<button id=${
-      friend.id
-    } class="btn btn-default follow-friend" data-id="${
-      friend.id
-    }">Follow</button>`;
-  }
+  let buttonText = type === "following" ? "Unfollow" : "Follow";
 
   return `
   <div class="friend-square">
@@ -81,7 +73,11 @@ function result(friend, type) {
       friend.image
     })"> </div>
     <p class="friend-name">${friend.name}</p>
-    ${followButton}
+    <button id=${
+      friend.id
+    } class="btn btn-default follow-unfollow-button" data-type="${buttonText.toLowerCase()}" data-id="${
+    friend.id
+  }">${buttonText}</button>
   </div>`;
 }
 
