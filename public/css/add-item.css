@@ -133,14 +133,24 @@ input {
 }
 
 .business-img {
-  width: 120px;
-  clip-path: circle(50px);
+  float: left;
+  display: inline-block;
+  height: 200px;
+  width: 30%;
+  background-image: ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .item-details {
   display: inline-block;
   line-height: 1.2em;
-  padding: 30px;
+}
+
+.item-data {
+  padding: 20px;
+  display: inline-block;
 }
 
 .business-recommendation {

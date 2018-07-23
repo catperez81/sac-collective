@@ -80,7 +80,7 @@ function result(recommendation, index) {
        <img class="business-img" src="${
          recommendation.image_url
        }" class="item-img" border="0" alt="profile-image">
-         <div class="data">
+         <div class="item-data">
           <h3 class="business-title">${recommendation.name}</h3>
           <p>${recommendation.location.address1}</p>
           <div class="item-type"><p>${recommendation.display_phone}</p></div>
@@ -110,6 +110,7 @@ businessClick();
 
 function businessClick() {
   $(".results").on("click", ".business-recommendation", function(event) {
+    $(".add-header").hide();
     $(".selected").html("<h1>Currently recommending: </h1> ");
     $(".selected").append($(this));
     $(".results").hide();
