@@ -5,13 +5,16 @@ To run dev server:
 
 # Pending
 
-1.  [CSS] Image size -> make it consistent across recommendations. 
-1.  [CSS] Clean up find friends
-1.  [CSS] Upvote/Downvote. move it. 
-1.  [CSS] Food/coffee/Shopping tags, different colors. 
-1.  [CSS] Additem page. Use the same format as results. 
-1.  [CSS] Mobile Check!!
-1.  [JS] Feed add "follow friends or add items" if there are no recommendations (meaning length of the results is 0)
+1.  [CSS] Image size -> make it consistent across recommendations. <strong>(Done)</strong>
+1.  [CSS] Clean up find friends <strong>(Done)</strong>
+1.  [CSS] Upvote/Downvote. move it. <strong>(Done)</strong>
+1.  [CSS] Food/coffee/Shopping tags, different colors. <strong>(Done)</strong>
+1.  [CSS] Additem page. Use the same format as results. <strong>(Done)</strong>
+1.  [CSS] Additem page. Update ordering / language for additional recommendation questions. <strong>(Done)</strong>
+1.  [JS] Feed add "follow friends or add items" if there are no recommendations (meaning length of the results is 0) <strong>(Done)</strong>
+1.  [CSS] Mobile Check!! <strong>WIP</strong>
+1.  [CSS] Hamburger menu on click (mobile)
+
  
 # Pending 2.0
 
