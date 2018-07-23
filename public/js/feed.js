@@ -43,7 +43,7 @@ function result(recommendation, index) {
         </a>
 
         <p>${recommendation.recommendation}</p>
-        <div class="item-type"><p>${recommendation.businessType}</p></div>
+        <div class="item-type ${recommendation.businessType}"><p>${recommendation.businessType}</p></div>
       </div>
       <div class="vote">
         <img src="images/upvote-button.png" height="36px" id="up-arrow" border="0" alt="upvote arrow">

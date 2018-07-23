@@ -87,13 +87,27 @@ p {
 }
 
 .item-type {
-  background: #fa4c6a;
-  color: white;
   border-radius: 5px;
   padding: 3px 3px;
-  width: 20%;
+  width: 30%;
   text-align: center;
   margin-top: 20px;
+}
+
+.Drinks {
+  background-color: #94E9F7;
+}
+
+.Shopping {
+  background-color: #FA4C6A;
+ }
+
+.Coffee {
+  background-color: #974CFA;
+}
+
+.Food {
+  background-color: #F7E094;
 }
 
 .vote {
