@@ -5,7 +5,7 @@ To run dev server:
 
 # Pending
 
-1.  [CSS] Image size -> make it consistent across recommendations. 
+1.  [CSS] Image size -> make it consistent across recommendations. <strong>(Done)</strong>
 1.  [CSS] Clean up find friends <strong>(Done)</strong>
 1.  [CSS] Upvote/Downvote. move it. <strong>(Done)</strong>
 1.  [CSS] Food/coffee/Shopping tags, different colors. <strong>(Done)</strong>
