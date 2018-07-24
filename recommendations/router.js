@@ -112,6 +112,47 @@ router.put("/:id", jsonParser, (req, res) => {
     .catch(err => res.status(500).json({ message: "Something went wrong" }));
 });
 
+router.post("/vote", jwtAuth, jsonParser, (req, res) => {
+  let value = req.body.type === "upvote" ? 1 : -1;
+  // let upvotePath = `votes.${req.user.id}`;
+  // console.log(upvotePath);
+  // console.log(req.body.postId);
+  // Recommendation.findByIdAndUpdate(
+  //   req.body.postId,
+  //   {
+  //     $set: {
+  //       upvotePath: value
+  //     }
+  //   },
+  //   { new: true }
+  // )
+  //   .then(updatedRecommendation => res.status(204).end())
+  //   .catch(err => {
+  //     console.log(err);
+  //     res.status(500).json({ message: "Something went wrong" });
+  //   });
+  // //
+  Recommendation.findById(req.body.postId)
+    .then(recommendation => {
+      var votes = recommendation.votes;
+      if (req.body.type === "upvote") {
+        votes[req.user.id] = 1;
+      } else if (req.body.type === "downvote") {
+        votes[req.user.id] = -1;
+      }
+
+      return Recommendation.update(
+        { _id: req.body.postId },
+        { $set: { votes } }
+      );
+    })
+    .then(recommendation => res.json({ msg: "updated" }))
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: "something went wrong" });
+    });
+});
+
 router.delete("/:id", (req, res) => {
   Recommendation.findByIdAndDelete(req.params.id)
     .then(deletedRecommendation => res.status(204).end())
