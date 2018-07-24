@@ -10,7 +10,7 @@ To run dev server:
 1.  [JS] Remove 'add' button from recommendation selection (WIP)
 1.  [CSS] Hamburger menu on click (WIP)
 1.  [CSS] Mobile Check!! (WIP)
-1.  Clean up code (delete console.logs for printing, spacing, etc)
+1.  Clean up code (delete console.logs for printing, spacing, etc) (WIP)
 
 # Completed
 
@@ -25,7 +25,12 @@ To run dev server:
 1.  [API] Display own recommendations on profile
 1.  [JS] Highlight friends that are already followed.
 1.  [JS] Don't display yourself in the follow friends.
+<<<<<<< Updated upstream
 1.  [API+JS] upvote/downvote
+=======
+1.  [JS] Sort by most recent on feed and profile
+
+>>>>>>> Stashed changes
 
 ---
 

@@ -119,6 +119,12 @@ p {
   top: 25px;
 }
 
+.vote-count {
+  position: relative;
+  bottom: 10px;
+}
+
+
 /*Mobile*/
 
 @media only screen and (max-width: 940px) {
@@ -160,7 +166,7 @@ p {
     top: 286px;
   }
 
-    .follow-button {
+  .follow-button {
     float: none;
     position: inherit;
     padding-top: 20px;
