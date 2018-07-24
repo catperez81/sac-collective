@@ -2,6 +2,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { Recommendation } = require("./models");
+const { User } = require("../users");
+const mongoose = require("mongoose");
 const passport = require("passport");
 const router = express.Router();
 const jsonParser = bodyParser.json();
@@ -12,6 +14,28 @@ router.get("/", jwtAuth, (req, res) => {
     .populate("user")
     .sort({ creationDate: -1 })
     .then(recommendations => {
+      res.json(
+        recommendations.map(recommendation => recommendation.serialize())
+      );
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: "something went wrong" });
+    });
+});
+
+router.get("/feed", jwtAuth, (req, res) => {
+  User.findById(req.user.id)
+    .then(user => {
+      let follows = [...user.follows, mongoose.Types.ObjectId(req.user.id)];
+      return Recommendation.find({ user: { $in: follows } })
+        .sort({
+          creationDate: -1
+        })
+        .populate("user");
+    })
+    .then(recommendations => {
+      console.log(recommendations);
       res.json(
         recommendations.map(recommendation => recommendation.serialize())
       );

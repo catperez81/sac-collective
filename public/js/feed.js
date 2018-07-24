@@ -2,7 +2,7 @@ $(getPosts);
 
 function getPosts() {
   $.ajax({
-    url: "/api/recommendations",
+    url: "/api/recommendations/feed",
     dataType: "json",
     type: "GET",
     success: function(response) {

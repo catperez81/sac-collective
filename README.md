@@ -7,8 +7,6 @@ To run dev server:
 # Pending
 
 1.  Tests `npm test`
-1.  [API+JS] upvote/downvote
-1.  [API+JS] Feed, only show recommendations from people you are following + yourself.
 1.  [JS] Remove 'add' button from recommendation selection (WIP)
 1.  [CSS] Hamburger menu on click (WIP)
 1.  [CSS] Mobile Check!! (WIP)
@@ -16,6 +14,7 @@ To run dev server:
 
 # Completed
 
+1.  [API+JS] Feed, only show recommendations from people you are following + yourself.
 1.  [CSS] Image size -> make it consistent across recommendations.
 1.  [CSS] Clean up find friends
 1.  [CSS] Upvote/Downvote. move it.
@@ -26,6 +25,7 @@ To run dev server:
 1.  [API] Display own recommendations on profile
 1.  [JS] Highlight friends that are already followed.
 1.  [JS] Don't display yourself in the follow friends.
+1.  [API+JS] upvote/downvote
 
 ---
 
