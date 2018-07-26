@@ -33,7 +33,7 @@ describe("Auth endpoints", function() {
       User.create({
         email,
         password,
-      
+        name
       })
     );
   });
@@ -103,8 +103,7 @@ describe("Auth endpoints", function() {
           expect(payload.user).to.deep.equal({
             bio: "",
             email: email,
-            follows: [],
-            id: res.value.id,
+            id: payload.user.id,
             image: "",
             name: name 
           });
