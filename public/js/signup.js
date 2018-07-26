@@ -1,9 +1,6 @@
-console.log("signup page");
-
 $(function() {
   setFormListener()
 });
-
 
 function setFormListener(){
 

@@ -1,5 +1,5 @@
-const YELP_API_KEY =
-  "62SPynvgdMjqoIbpDs0cmVmGDIwTEe2NwCzgKJ8YGjOxJO5IqSYBULIq0cwNuv0dVxQvY5P3BqLsxgxjOhlOy9S3Bysr3OyKpkJ_Rv7PFEwnkSRHkKUficpMvXtDW3Yx";
+const YELP_API_KEY = "62SPynvgdMjqoIbpDs0cmVmGDIwTEe2NwCzgKJ8YGjOxJO5IqSYBULIq0cwNuv0dVxQvY5P3BqLsxgxjOhlOy9S3Bysr3OyKpkJ_Rv7PFEwnkSRHkKUficpMvXtDW3Yx";
+
 $(function() {
   setFormListener();
 });
@@ -13,7 +13,6 @@ function getYelpOptions() {
   let query = {
     term: $(".biz-name").val() || "coffee"
   };
-
   $.ajax({
     url: "/api/yelp",
     data: query,
@@ -51,7 +50,6 @@ function setFormListener() {
       yelp_id: state.recommendedPlace.id,
       yelp_url: state.recommendedPlace.url
     };
-    console.log(recommendation);
 
     $.ajax({
       url: `/api/recommendations/`,
@@ -60,7 +58,6 @@ function setFormListener() {
         console.log("error", error);
       },
       success: function(data) {
-        console.log("created");
         location.replace("/feed.html");
       },
       headers: {
@@ -77,17 +74,15 @@ function result(recommendation, index) {
   return `
 		<div class="business-recommendation" data-index="${index}">
       <div class="item-details">
-       <img class="business-img" src="${
-         recommendation.image_url
-       }" class="item-img" border="0" alt="profile-image">
-         <div class="item-data">
+       <img class="business-img" src="${recommendation.image_url}" class="item-img" border="0" alt="profile-image">
+        <div class="item-data">
           <h3 class="business-title">${recommendation.name}</h3>
           <p>${recommendation.location.address1}</p>
           <div class="item-type"><p>${recommendation.display_phone}</p></div>
           <div class="add-row">
             <button class="btn btn-default add-button" type="add">Add</button>
           </div>
-          </div>
+        </div>
       </div>
       <div class="clear"></div>
     </div>`;
@@ -111,6 +106,7 @@ businessClick();
 function businessClick() {
   $(".results").on("click", ".business-recommendation", function(event) {
     $(".add-header").hide();
+    $(".add-row").hide();
     $(".selected").html("<h1>Currently recommending: </h1> ");
     $(".selected").append($(this));
     $(".results").hide();

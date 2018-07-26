@@ -1,5 +1,3 @@
-console.log("find friends page");
-
 $(function() {
   setFormListener();
   getUsers("follow");
@@ -48,7 +46,6 @@ function followUnfollowFriend(id, type) {
       getUsers("follow");
       getUsers("following");
     },
-
     headers: {
       Authorization: "Bearer " + authToken
     },
@@ -66,18 +63,12 @@ $(".user-results").on("click", ".follow-unfollow-button", function() {
 
 function result(friend, type) {
   let buttonText = type === "following" ? "Unfollow" : "Follow";
-
   return `
   <div class="friend-square">
-    <div class="friend-img" style="background-image:url(${
-      friend.image
-    })"> </div>
+    <div class="friend-img" style="background-image:url(${friend.image})">
+    </div>
     <p class="friend-name">${friend.name}</p>
-    <button id=${
-      friend.id
-    } class="btn btn-default follow-unfollow-button" data-type="${buttonText.toLowerCase()}" data-id="${
-    friend.id
-  }">${buttonText}</button>
+    <button id=${friend.id} class="btn btn-default follow-unfollow-button" data-type="${buttonText.toLowerCase()}" data-id="${friend.id}">${buttonText}</button>
   </div>`;
 }
 

@@ -1,5 +1,3 @@
-console.log("login page");
-
 $(function() {
   setFormListener();
 });
