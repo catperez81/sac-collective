@@ -73,6 +73,18 @@ h1 {
   padding: 10px 20px 0px 0px;
 }
 
+.dropdown-content {
+  background: black;
+  padding-bottom: 20px;
+}
+
+.responsive-menu-link {
+  display: inherit;
+  color: white;
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+
 /*Mobile*/
 
 @media only screen and (max-width: 600px) {
