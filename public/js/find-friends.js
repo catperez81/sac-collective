@@ -87,3 +87,12 @@ function renderResults(friends, type) {
   $(`#${type}`).html(results);
   $(`#${type}`).append(`<div class="clear"></div>`);
 }
+
+function hamburger() {
+  $(".hamburger").click(function(event) {
+    console.log("test");
+    $(".hamburger-dropdown").toggle();
+  });
+}
+
+hamburger();

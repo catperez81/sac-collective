@@ -113,3 +113,12 @@ function renderResults(recommendations) {
       or <a href="/find-friends.html">Follow friends</a>`);
   }
 }
+
+function hamburger() {
+  $(".hamburger").click(function(event) {
+    console.log("test");
+    $(".hamburger-dropdown").toggle();
+  });
+}
+
+hamburger();

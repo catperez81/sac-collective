@@ -71,3 +71,12 @@ function renderResults(recommendations) {
   const results = recommendations.map((item, index) => result(item, index));
   $(".profile-feed").html(results);
 }
+
+function hamburger() {
+  $(".hamburger").click(function(event) {
+    console.log("test");
+    $(".hamburger-dropdown").toggle();
+  });
+}
+
+hamburger();
