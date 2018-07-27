@@ -3,13 +3,6 @@ body {
   text-align: center;
 }
 
-#logo {
-  padding-left: 20px;
-  padding-top: 10px;
-  height: 16px;
-  vertical-align: middle;
-}
-
 .feed {
   margin-left: auto;
   margin-right: auto;
@@ -124,7 +117,6 @@ p {
   bottom: 10px;
 }
 
-
 /*Mobile*/
 
 @media only screen and (max-width: 940px) {
@@ -141,7 +133,6 @@ p {
 
   .feed {
     width: 100%;
-    margin-left: 15%;
   }
 
   .item-img {
@@ -158,7 +149,13 @@ p {
   }
 
   .collection-item {
-    width: 70%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  } 
+
+  .posted-by, .feed-title {
+    padding-left: 40px;
   }
 
   .vote {
@@ -170,24 +167,6 @@ p {
     float: none;
     position: inherit;
     padding-top: 20px;
-  }
-
-  .hamburger-dropdown {
-    display: none;
-  }
-
-  .hamburger {
-    display: inline-block;
-    float: right;
-    padding-right: 20px;
-  }
-
-  .add-item,
-  .find-friends,
-  .logout,
-  .profile,
-  .feed-link {
-    display: none;
   }
 
 }
