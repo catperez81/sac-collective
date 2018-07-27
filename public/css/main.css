@@ -1,5 +1,5 @@
 /* Defaults for all elements */
-\ * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,7 +9,6 @@
 html,
 body,
 main {
-  /*  height: 100%;*/
   margin: 0;
   color: black;
   font-family: "Muli", sans-serif;
@@ -142,4 +141,3 @@ h1 {
     display: none;
   }
 }
-

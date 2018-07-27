@@ -3,13 +3,6 @@ body {
   text-align: center;
 }
 
-#logo {
-  padding-left: 20px;
-  padding-top: 10px;
-  height: 16px;
-  vertical-align: middle;
-}
-
 .collection-item {
   width: 50%;
   margin: 50px auto 0px auto;
