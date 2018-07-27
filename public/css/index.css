@@ -20,6 +20,11 @@ h2 {
   font-family: "Muli", sans-serif;
 }
 
+#logo {
+  height: 30px;
+  vertical-align: middle;
+}
+
 .sky-asset {
   padding-bottom: 50px;
   width: 50%;
