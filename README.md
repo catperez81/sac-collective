@@ -5,10 +5,8 @@ To run dev server:
 1.  `nodemon`
 
 # Pending
-
-1.  Tests `npm test`
 1.  [CSS] Mobile Check!! (WIP)
-1.  Clean up code (delete console.logs for printing, spacing, etc) (WIP)
+1.  Clean up code (WIP)
 
 # Completed
 
@@ -29,6 +27,7 @@ To run dev server:
 1.  [JS] Sort by most recent on feed and profile
 1.  [CSS] Hamburger menu on click  
 1.  [JS] Remove 'add' button from recommendation selection  
+1.  Tests `npm test`
 
 >>>>>>> Stashed changes
 

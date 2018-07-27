@@ -3,17 +3,14 @@ body {
   text-align: center;
 }
 
+.signup-header {
+  padding-bottom: 20px;
+}
+
 .cta-row {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-}
-
-#logo {
-  padding-left: 20px;
-  padding-top: 10px;
-  height: 16px;
-  vertical-align: middle;
 }
 
 .form {
@@ -45,6 +42,7 @@ label {
   font-size: 16px;
   cursor: pointer;
   display: block;
+  padding-bottom: 10px;
 }
 
 .field {
@@ -61,7 +59,6 @@ input {
   font-size: 20px;
   border-radius: 5px;
   position: relative;
-  padding-left: 20px;
 }
 
 .switch-field {
@@ -89,7 +86,7 @@ input {
 
 .switch-field label {
   display: inline-block;
-  width: 148px;
+  width: 20%;
   background-color: #ECECEC;
   color: rgba(0, 0, 0, 0.6);
   font-size: 14px;
@@ -186,38 +183,71 @@ input {
   color: black;
   text-align: center;
 }
+
 .data {
   display: inline-block;
 }
-.business-img {
-  display: inline-block;
 
-  vertical-align: top;
-}
 .business-title {
   margin-top: 0px;
 }
+
 /*Mobile*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 640px) {
+  
   body {
     padding-bottom: 0px;
   }
 
+  .results {
+    width: 90%;
+  }
+
   .form {
-    margin: 5%;
-    text-align: center;
+    width: 70%;
   }
 
   .business-recommendation {
-    width: 88%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
 
+  .business-img {
+    width: 100%;
+  }
+
   .switch-field label {
-    width: 40px;
-    font-size: 13px;
-    padding: 12px 22px;
+    width: 80%;
+    margin: 10px;
+    padding: 12px;
+  }
+}
+
+@media only screen and (min-width: 602px) and (max-width: 800px) {
+
+  .results {
+    width: 90%;
+  }
+
+  .form {
+    width: 70%;
+  }
+
+  .business-recommendation {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .business-img {
+    width: 100%;
+  }
+
+  .switch-field label {
+    width: 80%;
+    margin: 10px;
+    padding: 12px;
   }
 }

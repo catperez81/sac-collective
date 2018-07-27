@@ -36,6 +36,13 @@ h1 {
   text-align: center;
 }
 
+#logo {
+  padding-left: 20px;
+  padding-top: 10px;
+  height: 16px;
+  vertical-align: middle;
+}
+
 .loggedin-nav {
   border-bottom: 1px solid #eaeaea;
   background: white;
@@ -108,3 +115,26 @@ h1 {
     display: none;
   }
 }
+
+@media only screen and (min-width: 602px) and (max-width: 800px) {
+  /* nav mobile responsive */
+
+  .hamburger-dropdown {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-block;
+    float: right;
+    padding-right: 20px;
+  }
+
+  .add-item,
+  .find-friends,
+  .logout,
+  .profile,
+  .feed-link {
+    display: none;
+  }
+}
+

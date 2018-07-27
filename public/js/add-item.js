@@ -107,7 +107,7 @@ function businessClick() {
   $(".results").on("click", ".business-recommendation", function(event) {
     $(".add-header").hide();
     $(".add-row").hide();
-    $(".selected").html("<h1>Currently recommending: </h1> ");
+    $(".selected").html("<h1>Currently recommending</h1> ");
     $(".selected").append($(this));
     $(".results").hide();
     $("#item-form").hide();
