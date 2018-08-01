@@ -36,6 +36,7 @@ h1 {
 }
 
 #logo {
+  padding-left: 20px;
   padding-top: 10px;
   height: 16px;
   vertical-align: middle;
