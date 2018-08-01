@@ -11,7 +11,7 @@ body {
 	position: static;
 }
 
-.signup-header {
+.signup-header, .signup-link {
   text-align: center;
 }
 
