@@ -7,9 +7,9 @@ https://sac-collective.herokuapp.com/index.html
 
 
 
-![screenshot 1](sac-collective/screenshot-1 "Landing page")
-![screenshot 2](sac-collective/screenshot-2 "Feed")
-![screenshot 3](sac-collective/screenshot-3 "Follow friends")
+![screenshot-1](sac-collective/screenshot-1 "Landing page")
+![screenshot-2](sac-collective/screenshot-2 "Feed")
+![screenshot-3](sac-collective/screenshot-3 "Follow friends")
 
 # Technology
 
