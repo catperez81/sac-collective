@@ -5,8 +5,13 @@ This is an app that will help current and new Sacramento folks create collection
 <strong>Link to app:</strong>
 https://sac-collective.herokuapp.com/index.html
 
+Landing page:
 ![image](https://user-images.githubusercontent.com/13722981/43544590-4e287eda-9588-11e8-8a3e-90c49eee5740.png)
+
+Feed:
 ![image](https://user-images.githubusercontent.com/13722981/43544622-666209d0-9588-11e8-8d5a-3b770cb80afd.png)
+
+Follow friends:
 ![image](https://user-images.githubusercontent.com/13722981/43544640-721d3376-9588-11e8-9a79-eeaddc975f35.png)
 
 # Technology
