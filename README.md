@@ -1,42 +1,37 @@
-# sac-collective
+# The Sacramento Collective
 
-To run dev server:
+This is an app that lets folks create curated collections of what's cool in Sacramento (coffee, food, shopping). They can follow eachother and upvote items they like.
 
-1.  `nodemon`
+<strong>Link to app:</strong>
+https://sac-collective.herokuapp.com/index.html
 
-# Pending
+Landing page:
+![image](https://user-images.githubusercontent.com/13722981/43544590-4e287eda-9588-11e8-8a3e-90c49eee5740.png)
 
+Feed:
+![image](https://user-images.githubusercontent.com/13722981/43544622-666209d0-9588-11e8-8d5a-3b770cb80afd.png)
 
-# Completed
+Follow friends:
+![image](https://user-images.githubusercontent.com/13722981/43544640-721d3376-9588-11e8-9a79-eeaddc975f35.png)
 
-1.  [API+JS] Feed, only show recommendations from people you are following + yourself.
-1.  [CSS] Image size -> make it consistent across recommendations.
-1.  [CSS] Clean up find friends
-1.  [CSS] Upvote/Downvote. move it.
-1.  [CSS] Food/coffee/Shopping tags, different colors.
-1.  [CSS] Additem page. Use the same format as results.
-1.  [CSS] Additem page. Update ordering / language for additional recommendation questions.
-1.  [JS] Feed add "follow friends or add items" if there are no recommendations (meaning length of the results is 0)
-1.  [API] Display own recommendations on profile
-1.  [JS] Highlight friends that are already followed.
-1.  [JS] Don't display yourself in the follow friends.
-<<<<<<< Updated upstream
-1.  [API+JS] upvote/downvote
-=======
-1.  [JS] Sort by most recent on feed and profile
-1.  [CSS] Hamburger menu on click  
-1.  [JS] Remove 'add' button from recommendation selection  
-1.  Tests `npm test`
-1.  [CSS] Mobile Check!!  
-1.  Clean up code  
+# Technology
 
->>>>>>> Stashed changes
-
----
+HTML5, CSS3, Javascript, jQuery
+Node.js + Express.js
+MongoDB
+Mongoose
+Mocha + Chai
+MLab
+Travis CI
+JWT Authentication
+Bcrypt
+Passport
+Yelp API
 
 ## Future Addons
 
-1.  Maps
-1.  Profile editing
-1.  Search friends
-1.  Image uploads
+1. Point to domain on GoDaddy 
+2. Maps
+3. Profile editing
+4. Search friends
+5. Image uploads
