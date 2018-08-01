@@ -134,7 +134,6 @@ input {
   display: inline-block;
   height: 200px;
   width: 30%;
-  background-image: ;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -194,6 +193,27 @@ input {
 
 /*Mobile*/
 
+@media only screen and (max-width: 400px) {
+  
+  .results {
+    width: 84%;
+  }
+
+  .form {
+    width: 70%;
+  }
+
+  .business-img {
+    width: 100%;
+  }
+
+  .switch-field label {
+    width: 90%;
+    margin: 4px;
+  }
+
+}
+
 @media only screen and (min-width: 640px) {
   
   body {
@@ -201,7 +221,7 @@ input {
   }
 
   .results {
-    width: 90%;
+    width: 76%;
   }
 
   .form {
@@ -214,40 +234,13 @@ input {
     margin-right: auto;
   }
 
-  .business-img {
-    width: 100%;
-  }
-
   .switch-field label {
+    width: 20%;
+    margin: 0;
+  }
+
+@media only screen and (max-width: 940px) {
+  .feed {
     width: 80%;
-    margin: 10px;
-    padding: 12px;
-  }
-}
-
-@media only screen and (min-width: 602px) and (max-width: 800px) {
-
-  .results {
-    width: 90%;
-  }
-
-  .form {
-    width: 70%;
-  }
-
-  .business-recommendation {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .business-img {
-    width: 100%;
-  }
-
-  .switch-field label {
-    width: 80%;
-    margin: 10px;
-    padding: 12px;
   }
 }

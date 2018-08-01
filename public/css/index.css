@@ -39,13 +39,14 @@ h2 {
   background: white;
   border-top: 1px solid #ececec;
   text-align: left;
-  padding: 50px 0px 50px 50px;
+  padding: 50px;
   display: inline-block;
 }
 
 .value-content {
   width: 25%;
-  margin-right: 5%;
+  margin-right: 4%;
+  margin-left: 4%;
   text-align: left;
   float: left;
   display: inline-block;
