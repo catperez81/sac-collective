@@ -1,6 +1,6 @@
 # The Sacramento Collective
 
-This is an app that will help current and new Sacramento folks create collections of what's cool, like restaurants, coffee shops and shopping. They can follow eachother and upvote items they like.
+This is an app that lets folks create curated collections of what's cool in Sacramento (coffee, food, shopping). They can follow eachother and upvote items they like.
 
 <strong>Link to app:</strong>
 https://sac-collective.herokuapp.com/index.html
